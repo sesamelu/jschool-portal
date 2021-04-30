@@ -1,0 +1,14 @@
+/*1200以下*/
+
+.schools-part .introduce-Info{
+    display:none;
+}
+.schools-part-title-info{
+    font-size:36px;
+}
+.schools-part-title{
+    font-size:36px;
+}
+.more-info-button{
+    bottom:28%;
+}

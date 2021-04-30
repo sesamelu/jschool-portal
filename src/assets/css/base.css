@@ -1,0 +1,98 @@
+html,
+body {
+    /* height: 100%; */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /* background-color: #fff; */
+}
+
+* {
+    font-family: Arial, 'Times New Roman', 'Microsoft YaHei', "微软雅黑", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bd-tc {
+    text-align: center;
+}
+
+.bd-tr {
+    text-align: right;
+}
+
+.bd-tl {
+    text-align: left;
+}
+
+.bd-cursor-pointer {
+    cursor: pointer;
+}
+
+.bd-display-none {
+    display: none;
+}
+
+.bd-text-break {
+    word-break: break-all;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding-top: 0;
+    font-size: 1.6rem;
+}
+
+ /* 中等屏幕（桌面显示器，大于等于 992px） */
+@media  screen and  (max-width:1200px){
+
+ }
+ 
+ @media  screen and  (max-width:1100px){
+    html{
+        font-size:10px;
+    }
+    body{
+        font-size:16px;
+    
+    }
+ }
+ @media  screen and  (max-width:800px){
+    html{
+        font-size:10px;
+    }
+    body{
+        font-size:16px;
+    
+    }
+ }
+ @media  screen and  (max-width:550px){
+    html{
+        font-size:10px;
+    }
+    body{
+        font-size:16px;
+    
+    }    
+ }
+ @media  screen and  (max-width:420px){
+    html{
+        font-size:10px;
+    }
+    body{
+        font-size:16px;
+    
+    }
+ }
+

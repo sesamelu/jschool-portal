@@ -1,0 +1,68 @@
+/*375px*/
+
+html{
+    font-size:10px;
+}
+body{
+    font-size:16px;
+
+}
+
+.lg-word-logo>img{
+    width:14rem;
+}
+.school-log img{
+    height:2rem;
+}
+.school-menu-img img{
+    width:1.4rem;
+
+}
+.school-language{
+    font-size:1.4rem;
+}
+.WChart-code-item{
+    width:13%
+}
+.bottom-line{
+    width:26%;
+}
+.index-words-content{
+    font-size:14px;
+}
+.schools-part-title-info{
+    margin-top:0;
+}
+.en-index-words{
+    line-height:14px;
+}
+.WChart-code-item:first-child{
+    margin-right: 50px;
+}
+.WChart-code-item{
+    margin-right: 50px;
+    width: 30%;
+    margin-bottom: 20px;
+}
+@media  screen and (max-width: 375px) {
+    .en-index-word-location{
+        top:56%;
+    }
+    .bottom-content {
+        width: 100%;
+    }
+    .school-language {
+        font-size: 10px;
+    }
+}
+
+@media  screen and (max-width: 325px) {
+    .index-words-content{
+        font-size:10px;
+    }
+    
+    .index-word-location{
+        top:46%;
+    }
+}
+

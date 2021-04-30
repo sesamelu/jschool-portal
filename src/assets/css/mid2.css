@@ -1,0 +1,65 @@
+/*800px以下的*/
+
+html{
+    font-size:10px;
+}
+body{
+    font-size:16px;
+
+}
+
+.main-info{
+    padding-left:70px;
+}
+.main-info .wChart{
+    width:100%;
+}
+.WChart-code-item{
+    width:17%;
+}
+.bottom-line{
+    width:30%;
+}
+
+.index-words-content{
+    font-size:20px;
+}
+.index-word-location{
+    top:68%;
+}
+
+.more-info-button {
+    height: auto;
+    font-size: 14px;
+    padding:5px 0;
+    bottom: 10%;
+    left: 34%;
+
+}
+.schools-icon-info {
+    margin-top: 34px;
+}
+.schools-part-title-info{
+    font-size:24px;
+}
+.schools-part-title{
+    font-size:24px;
+}
+.left-word, .right-word {
+    font-size: 16px;
+}
+@media  screen and (max-width: 700px) {
+    .left-word, .right-word {
+        font-size: 14px;
+    }
+}
+.link-word{
+    font-size:16px;
+}
+.school-introduce-new{
+    font-size:32px;
+  }
+  .index-campus-word{
+    font-size:20px;
+    margin-top:40px;
+}

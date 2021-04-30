@@ -1,0 +1,1339 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding-top: 0;
+    font-size: 1.6rem;
+}
+
+
+.school-top {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    width: 83.6%;
+    margin-left: 7.4%;
+    align-items: center;
+    background-color: #fff;
+}
+.menu-close{
+    display:none
+}
+
+.school-menu-img {
+    flex: 1;
+    display: none;
+}
+.school-name-img{
+    flex:1
+}
+.school-logo-img{
+    flex:1;
+    text-align: center
+}
+.left-wrapper:first-child{
+    margin-bottom: 1.724%;
+}
+.second-left{
+    margin-right: 1.25%;
+}
+
+.school-home{
+    text-align: right;
+    flex:1
+}
+
+
+.school-language {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333333;
+    text-align: right;
+    cursor: pointer;
+
+}
+
+.lg-word-logo {
+    display: inline-block;
+    margin: 22px 0;
+}
+
+.cover{
+    display: none;
+}
+
+.school-info > div {
+    display: inline-block;
+    vertical-align: middle;
+    width: 33.3%;
+    float: left;
+
+}
+
+.body-fixed{
+    position:relative;
+}
+
+.clearfix::before, .clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+.lg-word-logo > img {
+    height: 100%;
+}
+
+.school-menu.school-middle {
+    display: none;
+}
+
+
+.is-stick {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    width: 100%;
+}
+
+
+
+.school-info {
+    height: 96px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.school-log {
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+.school-language:hover {
+    color: #0066cc;
+}
+
+.school-nav-wrapper {
+    position: relative;
+}
+
+.school-nav-content {
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.school-bar-left {
+    position: absolute;
+    display: inline-block;
+    height: 50px;
+    width: 8%;
+    background-color: #b6212d;
+
+}
+
+.school-bar-right {
+    position: absolute;
+    height: 50px;
+    width: 8%;
+    right: 0;
+    top: 0;
+    background-color: #b6212d;
+}
+
+.school-nav {
+    height: 50px;
+    background-color: #1c305c;
+    padding-left:3%;
+    padding-right:3%
+}
+
+.school-nav-content .nav-pills > li > a {
+    height: 50px;
+    padding: 15px 0;
+    border-radius: 0;
+    font-size: 16px;
+    color: #fff;
+    display: inline-block;
+
+}
+
+.school-nav-content .nav-pills > li {
+    display: inline-block;
+    width: 13%;
+    text-align: center;
+}
+
+.school-nav-content .nav-pills > li.middle-width {
+    width: 15%;
+}
+
+.school-nav-content .nav-pills > li.long-width {
+    width: 18.5%;
+}
+
+.school-nav-content .nav-pills > li > a:focus, .nav-pills > li > a:hover {
+    color: #fff;
+    border-bottom: 0 solid #b6212d;
+    background-color: #1c305c !important;
+    font-weight: bold;
+}
+
+ .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover, .nav-pills > li.active > a {
+    color: #fff;
+    border-bottom: 6px solid #b6212d !important;
+    background-color: #1c305c !important;
+    font-weight: bold;
+}
+
+.top-section {
+    margin: 40px auto;
+    width: 80%;
+    text-align: right;
+    position: relative;
+    margin-bottom: 74px;
+}
+
+.picture-part-wrapper {
+    display: inline-block;
+    width: 880px;
+    height: 560px;
+}
+
+.school-nav-content .dropdown-menu {
+    border-radius: 0;
+    padding: 8px 0;
+    margin-top: -8px;
+    margin-left: 33%
+}
+
+.school-nav-content .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #333333;
+    background-color: #fff;
+}
+
+.word-part {
+    display: inline-block;
+    width: 720px;
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    opacity: 0.8;
+    color: #333333;
+    font-size: 16px;
+    line-height: 24px;
+    text-indent: 2em;
+    padding: 20px 20px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.schools-part {
+    width:100%;
+    min-width: auto;
+    margin: 30px auto;
+    text-align: center;
+    margin-bottom: 140px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+}
+
+.schools-part > div {
+    width: 420px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2.5%;
+}
+.schools-part > div.high{
+    margin-right:0;
+}
+
+.schools-part > div > div > .imgDiv {
+    width: 100%;
+    height: 100%;
+}
+
+.high-school, .primary-junior-school, .kindergarten {
+    width:420px;
+    height: 560px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+
+}
+.schools-img-row{
+    display:none;
+}
+
+.index-second-part{
+    display: flex;
+    display: -webkit-flex;
+    width: 83.3%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.second-left-content,.second-right-content{
+    height:100%;
+    justify-content: space-between;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+
+.left-wrapper{
+    position:relative;
+}
+
+.right-wrapper{
+    position:relative;
+}
+
+
+.left-word ,.right-word{
+    font-size:3rem;
+    color:#ffffff;
+    position:absolute;
+    bottom:0;
+    font-weight: bold;
+
+}
+.en-new .school-nav-content. nav-pills > li.en-nav-2{
+    width:12%;
+}
+.en-new .school-nav-content .nav-pills > li.en-nav-3{
+    width:15%;
+}
+.en-new .school-nav-content .nav-pills > li.en-nav-4{
+    width:17%;
+}
+@media  screen and (max-width: 1400px) {
+    .left-word, .right-word {
+        font-size:28px;
+        padding: 20px 10px;
+    }
+}
+
+.imgDiv {
+    opacity: 1.4;
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.schools-icon {
+    margin-top: 23%;
+}
+
+.schools-part-title {
+    min-width: auto;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    margin-bottom: 140px;
+    font-size:42px;
+    color:#ffffff;
+    font-weight:bold;
+    justify-content: center;
+
+}
+
+.Underline-bar {
+    margin-top: 36px;
+    width: 50px;
+    height: 2px;
+    display: inline-block;
+    background-color: #fff;
+
+}
+
+.more-info-button {
+    min-width:60px;
+    width: 30%;
+    height: 36px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 7px 0px;
+    display: inline-block;
+    border: 1px solid #fff;
+    position: absolute;
+    bottom: 10%;
+    left: 34.7%;
+    cursor: pointer;
+}
+
+.more-info-button:hover {
+    background-color: #214622;
+}
+
+#kindergartenInfo, #highInfo, #primaryInfo {
+    background-color: #3c763d;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 8px;
+}
+
+.schools-icon-info {
+    margin-top: 54px;
+    /*margin-top:10%*/
+}
+
+ .center-btn{
+     text-align: center;
+ }
+/*.info-content>div{*/
+    /*flex:1;*/
+/*}*/
+.schools-part-title-info {
+    font-size: 42px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.introduce-Info {
+    text-indent: 2em;
+    margin: 34px 20px;
+    display: inline-block;
+    color: #fff;
+    text-align: left;
+    line-height: 24px;
+}
+
+.active {
+    display: block;
+}
+
+.noActive {
+    display: none;
+}
+
+.info-botttom {
+    background-color: #36b25c;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 55;
+    width: 100%;
+    height: 100%
+}
+
+.more-info-button:focus, .more-info-button:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-part .bottom-height {
+    height: 385px;
+}
+
+.bottom-picture {
+    background-image: url(../img/images/img-bottom.png);
+    background-size: 100% 100%;
+    color: #A5BBE9;
+    text-align: center;
+}
+
+
+
+.main-info {
+    padding-top: 40px;
+}
+
+.bottom-line {
+    width: 40%;
+    height: 1px;
+    background-color: #A5BBE9;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contact-title {
+    font-size: 20px;
+}
+
+.main-info > div {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+
+}
+
+.en .main-info > div {
+    width: 42%;
+}
+
+.phone-address {
+    font-size: 14px;
+    padding-left:6%;
+}
+
+.address-flex{
+    display: flex;
+    display: -webkit-flex;
+}
+.phone-item{
+    display:flex;
+    display: -webkit-flex;
+}
+
+
+.contact-information, .phones, .other-information {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contact-information {
+    margin-top: 27px;
+    line-height: 24px;
+    width: 100%;
+}
+
+.phones {
+    margin-right: 36px;
+}
+
+.WChart-code-wrapper {
+    margin-top: 29px;
+}
+
+.WChart-code-item {
+    font-size: 13px;
+    display: inline-block;
+    width: 18%;
+    text-align: center;
+    margin-right: 22px;
+    vertical-align: top;
+}
+
+.phone-item-word {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.phone-item > img {
+    vertical-align: middle;
+}
+
+.address-item > img {
+    vertical-align: -3px;
+
+}
+
+.address-item-word {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.phone-address, .wChart {
+    display: inline-block;
+    text-align: left;
+}
+
+.WChart-code-item > img {
+    width: 100%;
+}
+
+.WChart-code-item > div {
+    padding-top: 4px;
+}
+
+.bottom-content {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+}
+
+.bottom-underline {
+    margin-top: 62px;
+}
+
+.bottom-police-word {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom:12px;
+}
+
+.address {
+    margin-top: 16px;
+}
+
+.WChart-code-item:first-child {
+    margin-right: 36px;
+}
+
+
+.schools-content .ih-item img {
+    width: 100%;
+    height: 100%;
+}
+
+/*.schools-part .ih-item img {*/
+    /*width: auto;*/
+    /*height: auto;*/
+/*}*/
+
+.schools-content .ih-item .info img, .ih-item .img-word img {
+    width: auto;
+    height: auto;
+}
+
+.schools-content .ih-item.square {
+    border: 0 solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+}
+
+.schools-content .img-word {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.schools-part .ih-item.square.effect13 .info {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out
+}
+
+.schools-content .img-word-bottom {
+    position: absolute;
+    top: 0;
+    background-color: #000000;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+.address-inline {
+    vertical-align: top;
+    display: inline-block;
+    width: 96%;
+    padding-left: 4px;
+    word-break: break-all;
+}
+
+.schools-content .top-section .picture-part-wrapper .square-picture {
+    border-radius: 0;
+    width: 100%;
+    height: 100%
+}
+
+.schools-content .kindergarten .ih-item.square.effect13.colored .info {
+    background: rgba(36, 174, 92, 0.8);
+}
+
+.schools-content .primary-junior-school .ih-item.square.effect13.colored .info {
+    background: rgba(28, 124, 180, 0.8);
+}
+
+.schools-content .high-school .ih-item.square.effect13.colored .info {
+    background: rgba(184, 50, 36, 0.8);
+}
+
+.schools-kindergarten {
+    margin: 40px auto;
+    margin-bottom: 140px;
+    width: 80%;
+}
+
+.schools-kindergarten.en {
+    margin-bottom: 80px;
+}
+
+.kindergarten-preview {
+    width: 100%;
+}
+
+.kindergarten-link {
+    width: 30%;
+    display: inline-block;
+    margin-top: 136px;
+
+}
+
+.kindergarten-picture {
+    position: absolute;
+    width: 60%;
+    right: 0;
+    top: 186px;
+    display: inline-block;
+}
+
+.kindergarten-info-title {
+    display: inline-block;
+    margin-top: 54px;
+    width: 70%;
+    padding-right: 20px;
+}
+
+.kindergarten-info-title.en {
+    margin-top: 14px;
+    width: 90%;
+}
+
+.col-bar {
+    height: 72px;
+    width: 10px;
+    margin-right: 30px;
+    background-color: #b6212d;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.info-title {
+    color: #b6212D;
+    font-size: 72px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+.en.info-title {
+    margin-top: 126px;
+}
+
+.link-item {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #1c305c;
+    cursor: pointer;
+}
+
+.link-item:hover {
+    color: #0066cc;
+}
+
+.picture-wrapper {
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    /* min-width: 800px; */
+}
+
+.kindergarten-picture .ih-item.square {
+    width: 100%;
+    height: 100%;
+    border: 0 solid #fff;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.info-word {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    text-indent: 2em;
+    text-align: justify;
+
+}
+
+.info-word-title {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.kindergarten-link .link-item a:focus, .kindergarten-link .link-item a:hover, .kindergarten-link .link-item a.active {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.kindergarten-link .link-item a {
+    color: #1c305c;
+    text-decoration: none;
+}
+
+.text-a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.schools-content .ih-item.square.effect6 a:hover .img, .kindergarten-picture .ih-item.square.effect6 a:hover .img, .section-wrapper .ih-item.square.effect6 a:hover .img {
+    -webkit-transform: scale(1.06);
+    -moz-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    -o-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+.profile {
+    font-size: 66px;
+}
+
+.profile-title2 {
+    font-size: 48px;
+
+}
+
+.two-col {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.title-word2 {
+    color: #b6212D;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.top-distance {
+    margin-top: 18px;
+}
+
+.section-wrapper {
+    margin-top: 94px;
+    min-width: 1312px;
+}
+
+.section-wrapper .ih-item.square {
+    position: relative;
+    width: auto;
+    height: auto;
+    border: 0 solid #fff;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.resources-content {
+    width: 80%;
+    margin: 0 auto;
+    min-width: 1154px;
+}
+
+.borders {
+    vertical-align: top;
+    border: 1px solid #dddddd;
+    min-width: 380px;
+    height: 680px;
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+
+.no-border {
+    border-left: 0 solid #fff;
+    border-right: 0 solid #fff;
+}
+
+.second-resource.en .borders {
+    height: 680px;
+}
+
+.resource-top {
+    height: 160px;
+    width: 100%;
+    text-align: center;
+}
+
+.school-nav-content.en-new .nav-pills > li{
+width:13%;
+}
+
+.resource-link {
+    text-align: center;
+    font-size: 24px;
+    color: #b6212d;
+    cursor: pointer;
+    border-bottom: 1px solid #b6212d;
+
+}
+
+.resource-word {
+    padding: 0 20px;
+    margin-top: 24px;
+
+    text-align: justify;
+
+}
+
+.borders a {
+    color: #b6212d;
+    text-decoration: none;
+}
+
+.borders a:hover, .borders a.active, .borders a.focus {
+    color: #b6212d;
+    text-decoration: none;
+}
+
+.second-resource .border {
+    height: 460px;
+}
+
+.second-resource {
+    margin-bottom: 140px;
+    margin-top: 40px;
+}
+
+.borders a:focus {
+    outline: thin dotted;
+    outline: 0 auto #b6212d;
+    outline-offset: -2px;
+}
+
+a.kindergarten-word-link {
+    color: #333333;
+}
+
+.index-words-content {
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.index-word-part {
+    text-shadow: 2px 2px 2px #333333;
+    padding: 20px 20px;
+    display: inline-block;
+    padding-left: 2%;
+}
+
+.index-word-location {
+    position: absolute;
+    top: 82%;
+    left: 0;
+}
+
+.index-picture-part-wrapper {
+    text-align: center;
+
+}
+
+.index-first {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+.index-first-new{
+    width: 83%;
+}
+
+.index-second-position {
+    margin-top: 34px;
+    position: relative;
+    height: 1076px;
+    min-width: 1154px;
+}
+
+.index-picture4 {
+    margin-top: 70px;
+    position: relative;
+    margin-left: 16.4%;
+    height: 600px;
+}
+
+.index-picture3-position {
+    position: absolute;
+    top: 460px;
+    right: 0;
+    min-width: 1154px;
+    width: 100%;
+    text-align: right;
+}
+
+.index-picture3-position > div {
+    vertical-align: bottom;
+}
+
+.index-picture3-word {
+    display: inline-block;
+    background-color: #1c305c;
+    vertical-align: top;
+    top: 62%;
+    position: absolute;
+    right: 52%;
+    text-align: left;
+    padding: 20px 62px;
+}
+
+.schools-content .index-first .ih-item.square, .schools-content .index-second .ih-item.square {
+    border: 0 solid #fff;
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+    width: auto;
+    height: auto;
+}
+
+.index-word-second {
+    position: absolute;
+    background-color: #1c305c;
+    vertical-align: top;
+    margin-left: 0;
+    top: 66px;
+
+}
+
+.dorm, .dining-room {
+    display: inline-block;
+    width: 660px;
+    vertical-align: top;
+    text-align: left;
+    margin-top: 74px;
+
+}
+
+.dorm {
+    margin-right: 40px;
+}
+
+.dorm-word-wrapper, .dining-word-wrapper {
+    width: 100%;
+    background-color: #1c305c;
+    padding: 20px 20px;
+    font-size: 40px;
+}
+
+.en .dorm-word-wrapper, .en .dining-word-wrapper {
+    height: 174px;
+}
+
+.room {
+    text-align: center;
+    margin: 0 auto;
+    min-width: 1154px;
+}
+
+.school-introduce {
+    margin-top: 142px;
+    font-size: 60px;
+    color: #ba212D;
+    margin-bottom: 78px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+.school-introduce-new {
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+}
+
+.schools-content .school-part .ih-item img {
+    width: auto;
+    height: auto;
+}
+
+.schools-content .school-part .ih-item.square {
+    border-radius: 0;
+}
+
+.other-school .ih-item.square.effect6 .info {
+    transition: all 0.02s ease-in-out
+}
+
+.other-school {
+    width: 86%;
+    margin: 0 auto;
+    margin-bottom: 140px;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.school-item {
+    display: inline-block;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.schools-content .room .ih-item.square {
+    border-radius: 0;
+}
+
+.link-word {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.schools-content .school-item .ih-item.square {
+    border-radius: 0;
+}
+
+.school-nav a {
+    height: 40px;
+}
+
+.school-nav .dropdown-menu > li > a {
+    padding: 10px 20px;
+    color: #666666;
+    font-size: 16px;
+}
+
+.school-nav-content .nav-pills > li:hover .dropdown-menu {
+    display: block;
+}
+
+.bottom-underline .bottom-line-en {
+    width: 34%;
+}
+
+.bottom-part.en .bottom-height {
+    height: 385px;
+}
+
+.school-nav-content.en .nav-pills > li {
+    width: 13%;
+}
+
+.school-info a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.school-info a:hover, a:focus {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.school-nav-content .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #1c305c;
+}
+
+.school-nav-content .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: #1c305c;
+}
+
+.ih-item.square.effect6 .info {
+    transition: all 0.05s ease-in-out
+}
+
+a.download {
+    color: #333333;
+    text-decoration: none;
+}
+
+a.download:hover, a.download:focus {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.collapse-title {
+    font-size: 18px;
+
+}
+
+.collapse-title-active {
+    font-size: 18px;
+    color: #0066cc;
+}
+
+.schools-kindergarten .panel-group .panel + .panel {
+    margin-top: 0;
+    border-radius: 0;
+}
+
+.schools-kindergarten .panel-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.schools-kindergarten .panel-group .panel {
+    border-radius: 0;
+    border: 0 solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.schools-kindergarten .panel-default > .panel-heading {
+    background-color: #fff;
+}
+
+.schools-kindergarten .panel-default a {
+    color: #1c305c;
+}
+
+.schools-kindergarten .panel-default a:hover {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.schools-kindergarten .panel-default a:focus {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.schools-kindergarten .panel-heading {
+    padding: 21px 15px;
+}
+
+.schools-kindergarten .panel-group .panel-heading + .panel-collapse .panel-body {
+    border-top: 0 solid #ddd;
+}
+
+.schools-kindergarten .panel-group .panel-heading + .panel-collapse .panel-body {
+    border-top: 0 solid #ddd;
+}
+
+.text-indent-wrapper {
+    padding-left: 32px;
+}
+
+.text-indent-wrapper > .info-word {
+    text-indent: 0;
+}
+
+.collapse-title > .img-icon {
+    display: inline-block;
+    width: 10%;
+    text-align: right;
+}
+
+.collapse-title > .collapse-word {
+    display: inline-block;
+    width: 90%;
+    color: #1c305c;
+}
+
+.collapse-title > .collapse-word:hover {
+    color: #0066cc;
+}
+
+.collapse-title > .collapse-word-expand {
+    display: inline-block;
+    width: 90%;
+    color: #0066cc;
+}
+.campus{
+    width:70.8%;
+    margin:0 auto;
+}
+.index-campus-word{
+    font-size:30px;
+    color:#1c305c;
+    font-weight: bold;
+    padding: 20px;
+    margin-top:80px;
+}
+.campus  .ih-item.square{
+    border-radius: 0;
+}
+.school-item .ih-item.square{
+    width:100%;
+    height:100%;
+        border: 0 solid #fff;
+}
+.graduate-top{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.kindergarten-picture-new{
+        position: static; 
+         top: auto;
+}
+.col-bar-creater{
+ height:136px;
+}
+
+  .schools-content  .campus-picture .ih-item.square{
+    border-radius: 0;
+  }
+  .other-school .school-item .ih-item.square {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+}
+.brige{
+    font-size:24px;
+    text-align: center;
+    margin-top:60px;
+}
+.founder-word{
+   font-size:60px;
+}
+.other-school{
+    justify-content: center;
+}
+@media  screen and (max-width: 1400px) { 
+.title-word-new{
+    font-size:52px;
+}
+}
+/* 学校部分开始缩放 */
+@media  screen and (max-width: 1340px) { 
+    .schools-part{
+        padding:0  10px;
+    }
+    .schools-part > div{
+        flex: 1;
+        width: 32%;
+    }
+    .high-school, .primary-junior-school, .kindergarten{
+        width:auto;
+        height:auto;
+    }
+    .index-second-part{
+        width:100%;
+    }
+    .creat-new{
+        width:90%;
+    }
+  .en-new  .school-nav-content .nav-pills > li{
+        width:12%
+    }
+}
+
+@media  screen and (max-width: 1300px) { 
+    .index-word-location{
+        top:80%;
+    }
+    .index-words-content{
+        font-size:32px;
+    }
+    .schools-kindergarten-new{
+        width:90%;
+    }
+  
+
+}
+
+.info-resource{
+   text-align:center;
+   padding-top:26%; 
+}
+
+@media  screen and (max-width: 1620px) { 
+    .info-resource-second{
+        padding-top:18%; 
+     }
+}
+@media  screen and (max-width: 1266px) { 
+    .info-resource-first{
+        padding-top:18%; 
+     }
+     .en-new .more-info-button{
+         bottom:5%;
+     }
+}
+.word-flex{
+display: flex;
+display: -webkit-flex;
+align-items: center;
+}
+.creat-new{
+width:90%;
+}
+
+.index-word-location{
+    bottom:0!important;
+    top:auto!important;
+}
+@media  screen and (max-width: 1140px) { 
+    .index-word-part{
+        padding:10px;
+    }
+    .index-words-content{
+        line-height:28px;
+    }
+}
