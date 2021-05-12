@@ -11,16 +11,15 @@
                     </a>
                 </div>
                 <div class="school-name-img">
-                    <a class="lg-word-logo">
+                    <a class="lg-word-logo" style="cursor:pointer;" @click="goIndex">
                         <img
                             src="@assets/img/images/img-logo-t.png"
                             alt="齐舜学校·界首"
                         />
                     </a>
                 </div>
-                <div class="school-log">
-                    <a
-                        ><img src="@assets/img/images/img-logo.png" alt="图片"
+                <div class="school-log" style="cursor:pointer;" @click="goIndex">
+                    <a><img src="@assets/img/images/img-logo.png" alt="图片"
                     /></a>
                 </div>
                 <div class="school-home">
@@ -139,10 +138,10 @@ export default {
                             label: "创始人的话",
                             routerName: "page_organizerWord_ch",
                         },
-                        {
-                            label: "教师团队",
-                            routerName: "",
-                        },
+                        // {
+                        //     label: "教师团队",
+                        //     routerName: "",
+                        // },
                     ],
                 },
                 {
@@ -188,6 +187,12 @@ export default {
     },
     mounted() {},
     methods: {
+        //点击logo跳转到首页
+        goIndex(){
+            this.$router.push({
+                name:'page_index_ch'
+            })
+        },
         //点击nav跳转到对应页面
         goPage(routerName) {
             this.$router.push({

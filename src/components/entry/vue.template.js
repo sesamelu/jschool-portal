@@ -13,6 +13,8 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 // import '@assets/css/mid2.css'
 // import '@assets/css/small1.css'
 // import '@assets/css/small2.css'
+import 'swiper/dist/css/swiper.min.css'
+import 'swiper/dist/js/swiper.min'
 //注册fontawesome插件
 Vue.config.productionTip = false;
 Vue.prototype.$baseURL = "";

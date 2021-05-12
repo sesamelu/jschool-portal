@@ -889,10 +889,15 @@ a.kindergarten-word-link {
 }
 
 .index-words-content {
-    font-size: 40px;
+    font-size: 30px;
     line-height: 60px;
     font-weight: bold;
     color: #ffffff;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .index-word-part {
@@ -1328,6 +1333,7 @@ width:90%;
 .index-word-location{
     bottom:0!important;
     top:auto!important;
+    width: 100%;
 }
 @media  screen and (max-width: 1140px) { 
     .index-word-part{

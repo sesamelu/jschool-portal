@@ -13,6 +13,9 @@ const PAGE_SCHOOLS_CH =()=> import('./chinese/schools.vue')
 const PAGE_ORGANIZERWORD_CH =()=> import('./chinese/organizerWord.vue')
 //新闻与活动
 const PAGE_NEWS_CH =()=> import('./chinese/news.vue')
+// 新闻与活动详情
+const PAGE_NEWS_DETAIL_CH =()=> import('./chinese/newsDetail.vue')
+
 //学校资源
 const PAGE_RESOURCE_CH =()=> import('./chinese/resource.vue')
 //在职教师招聘
@@ -107,6 +110,12 @@ export default new Router({
                     path: 'news',
                     name: 'page_news_ch',
                     component: PAGE_NEWS_CH,
+                },
+                //新闻与活动详情
+                {
+                    path: 'news/detail/:id',
+                    name: 'page_news_detail_ch',
+                    component: PAGE_NEWS_DETAIL_CH,
                 },
                 //学校资源
                 {
