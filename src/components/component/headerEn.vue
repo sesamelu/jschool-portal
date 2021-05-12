@@ -11,13 +11,13 @@
                     /></a>
                 </div>
                 <div class="school-name-img">
-                    <a class="lg-word-logo"
+                    <a class="lg-word-logo" style="cursor:pointer;" @click="goIndex"
                         ><img
                             src="@assets/img/images/img-logo-t.png"
                             alt="齐舜学校·界首"
                     /></a>
                 </div>
-                <div class="school-log">
+                <div class="school-log" style="cursor:pointer;" @click="goIndex">
                     <a
                         ><img src="@assets/img/images/img-logo.png" alt="图片"
                     /></a>
@@ -118,8 +118,8 @@ export default {
                 },
                 {
                     label: "NEWS AND EVENTS",
-                    name: "",
-                    routerName: "",
+                    name: "page_news_en",
+                    routerName: "page_news_en",
                 },
                 {
                     label: "OUR NETWORK",
@@ -136,6 +136,12 @@ export default {
     },
     mounted() {},
     methods: {
+        //点击logo跳转到首页
+        goIndex(){
+            this.$router.push({
+                name:'page_index_en'
+            })
+        },
         //点击nav跳转到对应页面
         goPage(routerName) {
             this.$router.push({

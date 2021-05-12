@@ -16,7 +16,8 @@
                                             />
                                         </div>
                                         <div class="phone-item-word">
-                                            &nbsp;+86&nbsp;173-0968-8426
+                                            <!-- &nbsp;+86&nbsp;173-0968-8426 -->
+                                            0558-4831369
                                         </div>
                                     </div>
                                     <div class="phone-item">
@@ -26,7 +27,8 @@
                                             />
                                         </div>
                                         <div class="phone-item-word">
-                                            &nbsp;+86&nbsp;558-483-1369
+                                            <!-- &nbsp;+86&nbsp;558-483-1369 -->
+                                            0558-4810026
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +76,8 @@
                                             />
                                         </div>
                                         <div class="address-item-word">
-                                            &nbsp;办公室：安徽省界首市光武大道689号6号楼409-410室
+                                            <!-- &nbsp;办公室：安徽省界首市光武大道689号6号楼409-410室 -->
+                                            主校区（小学、初中、高中）：安徽省界首市颍南新区颖河路
                                         </div>
                                     </div>
                                     <div class="address-item address-flex">
@@ -85,7 +88,8 @@
                                             />
                                         </div>
                                         <div class="address-item-word">
-                                            &nbsp;主校区：安徽省界首市颍南新区颍河路
+                                            <!-- &nbsp;主校区：安徽省界首市颍南新区颍河路 -->
+                                            幼儿园：安徽省界首市颍南新区植物园安置小区1期内
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +105,7 @@
                                     />
                                     <div>齐舜学校·界首</div>
                                 </div>
-                                <div class="WChart-code-item">
+                                <!-- <div class="WChart-code-item">
                                     <img
                                         src="@assets/img/icon/code_recruit_students.png"
                                         alt=""
@@ -121,7 +125,7 @@
                                         alt=""
                                     />
                                     <div>咨询</div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

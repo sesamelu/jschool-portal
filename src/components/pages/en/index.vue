@@ -2,29 +2,123 @@
     <div class="pg-index-en">
         <article class="content">
             <div class="schools-content">
-                <div class="index-first index-first-new">
-                    <div class="index-picture-part-wrapper">
-                        <div
-                            class="ih-item square effect6 from_top_and_bottom square-picture"
-                        >
-                            <a href="#">
-                                <div class="img">
-                                    <img
-                                        src="@assets/img/images/index1.png"
-                                        alt="img"
-                                    />
+                <div class="swiper-container">
+                    <div class="left-mask">
+                    </div>
+                    <div class="right-mask">
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide index-first index-first-new ">
+                            <div class="index-picture-part-wrapper">
+                                <div
+                                    class="ih-item square effect6 from_top_and_bottom square-picture"
+                                >
+                                    <a href="#">
+                                        <div class="img">
+                                            <img
+                                                src="@assets/img/images/index1.png"
+                                                alt="img"
+                                            />
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
+                            </div>
+                            <div class="index-word-part index-word-location index-new">
+                                <span class="index-words-content"
+                                    >从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复</span
+                                >
+                            </div>
+                        </div>
+                        <div class="swiper-slide index-first index-first-new ">
+                            <div class="index-picture-part-wrapper">
+                                <div
+                                    class="ih-item square effect6 from_top_and_bottom square-picture"
+                                >
+                                    <a href="#">
+                                        <div class="img">
+                                            <img
+                                                src="@assets/img/images/index1.png"
+                                                alt="img"
+                                            />
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="index-word-part index-word-location index-new">
+                                <span class="index-words-content"
+                                    >22222第二页第二是否出席那省略的话放假的时候房价快速导航附件是的回复积分活动时间发页第二页</span
+                                >
+                            </div>
+                        </div>
+                        <div class="swiper-slide index-first index-first-new ">
+                            <div class="index-picture-part-wrapper">
+                                <div
+                                    class="ih-item square effect6 from_top_and_bottom square-picture"
+                                >
+                                    <a href="#">
+                                        <div class="img">
+                                            <img
+                                                src="@assets/img/images/index1.png"
+                                                alt="img"
+                                            />
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="index-word-part index-word-location index-new">
+                                <span class="index-words-content"
+                                    >33第三页第三页第三页</span
+                                >
+                            </div>
+                        </div>
+                        <div class="swiper-slide index-first index-first-new ">
+                            <div class="index-picture-part-wrapper">
+                                <div
+                                    class="ih-item square effect6 from_top_and_bottom square-picture"
+                                >
+                                    <a href="#">
+                                        <div class="img">
+                                            <img
+                                                src="@assets/img/images/index1.png"
+                                                alt="img"
+                                            />
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="index-word-part index-word-location index-new">
+                                <span class="index-words-content"
+                                    >第四</span
+                                >
+                            </div>
+                        </div>
+                        <div class="swiper-slide index-first index-first-new ">
+                            <div class="index-picture-part-wrapper">
+                                <div
+                                    class="ih-item square effect6 from_top_and_bottom square-picture"
+                                >
+                                    <a href="#">
+                                        <div class="img">
+                                            <img
+                                                src="@assets/img/images/index1.png"
+                                                alt="img"
+                                            />
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="index-word-part index-word-location index-new">
+                                <span class="index-words-content"
+                                    >第五页</span
+                                >
+                            </div>
                         </div>
                     </div>
-                    <div
-                        class="index-word-part index-word-location en-index-word-location"
-                    >
-                        <span class="index-words-content en-index-words"
-                            >High-quality Education from Kindergarten to High
-                            School</span
-                        >
-                    </div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                </div>
+                <div class="swiper-pagination-wrapper">
+                    <div class="swiper-pagination"></div>
                 </div>
                 <div class="schools">
                     <div class="school-introduce school-introduce-new">
@@ -533,19 +627,177 @@
     </div>
 </template>
 <script>
+import Swiper from 'swiper'
 export default {
     name: "chinese_index",
     created() {},
     data() {
         return {};
     },
-    mounted() {},
+    mounted() {
+         new Swiper ('.swiper-container', {
+            loop: true,
+            initialSlide :0,
+            spaceBetween: 20,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            paginationClickable: true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            // paginationBulletRender: function (swiper, index, className) {
+            //     return '<span class="'+className+'" style="width:60px;height:4px;border-radius:0;display:inline-block;margin-right:16px;"></span>';
+            // },
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            // slidesOffsetBefore:100,
+            // slidesOffsetAfter:100,
+            // 如果需要滚动条
+            // scrollbar: '.swiper-scrollbar',
+            //如果需要自动切换海报
+            // autoplay: {
+            //   delay: 1000,//时间 毫秒
+            //   disableOnInteraction: false,//用户操作之后是否停止自动轮播默认true
+            // },
+      })
+    },
     methods: {},
 
     components: {},
 };
 </script>
 <style scoped lang="scss">
-.pg-index-en {
+.pg-index-en{
+    .swiper-container{
+        // width: 90%;
+        .left-mask{
+            width: 6%;
+            height:100%;
+            background: #fff;
+            // background: linear-gradient(to right,rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)); 
+            opacity: 0.4;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 100;
+        }
+        .right-mask{
+            width: 6%;
+            height:100%;
+            background: #fff;
+            opacity: 0.4;
+            position: absolute;
+            top:0;
+            right:0;
+            z-index: 100;
+        }
+        
+    }
+    
 }
+
+</style>
+<style lang="scss">
+ .pg-index-en{
+     .swiper-slide{
+        width: 86%;
+    }
+    .swiper-pagination{
+        position: relative;
+        margin: 0 auto;
+        .swiper-pagination-bullet{
+            background: #E1E4EB;
+            opacity: 1;
+            width: 60px;
+            height:4px;
+            border-radius: 0;
+            display:inline-block;
+            margin-right:16px;
+        }
+        .swiper-pagination-bullet-active{
+            background: #A8B1C6;
+        }
+    }
+    .swiper-button-prev{
+        left: 110px;
+    }
+    .swiper-button-next{
+        right: 110px;
+    }
+    
+   
+    
+}
+@media  screen and  (max-width:1200px){
+    .pg-index-en {
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 60px;
+                height:4px;
+            }
+        }
+        .swiper-slide{
+            width: 86%;
+        }
+        
+    }
+}
+@media  screen and  (max-width:800px){
+    .pg-index-en {
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 48px;
+                height:3px;
+            }
+        }
+        .swiper-button-prev,.swiper-button-next{
+            display: none;
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+        .left-mask,.right-mask{
+            display: none;
+        }
+    }    
+}
+@media  screen and  (max-width:550px){
+    .pg-index-en {
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 36px;
+                height:3px;
+            }
+        }
+        .swiper-button-prev,.swiper-button-next{
+            display: none;
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+        .left-mask,.right-mask{
+            display: none;
+        }
+    }          
+}
+@media  screen and  (max-width:420px){
+    .pg-index-en {
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 36px;
+                height:3px;
+            }
+        }
+        .swiper-button-prev,.swiper-button-next{
+            display: none;
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+        .left-mask,.right-mask{
+            display: none;
+        }
+    }
+}
+
 </style>

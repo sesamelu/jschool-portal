@@ -460,8 +460,16 @@ body {
 
 .main-info > div {
     display: inline-block;
-    width: 49%;
+    /* width: 49%; */
     vertical-align: top;
+
+}
+.main-info .phone-address{
+    width: 69%;
+
+}
+.main-info .wChart{
+    width: 30%;
 
 }
 

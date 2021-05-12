@@ -37,7 +37,10 @@ const PAGE_SCHOOLS_EN =()=> import('./en/enSchools.vue')
 // our people
 const PAGE_ORGANIZERWORD_EN =()=> import('./en/enOrganizerWord.vue')
 //news and events
-
+//新闻与活动
+const PAGE_NEWS_EN =()=> import('./en/news.vue')
+// 新闻与活动详情
+const PAGE_NEWS_DETAIL_EN =()=> import('./en/newsDetail.vue')
 // our network
 const PAGE_RESOURCE_EN =()=> import('./en/enResource.vue')
 //careers
@@ -179,6 +182,18 @@ export default new Router({
                     component: PAGE_ORGANIZERWORD_EN,
                 },
                 //news and events
+                //新闻与活动
+                {
+                    path: 'news',
+                    name: 'page_news_en',
+                    component: PAGE_NEWS_EN,
+                },
+                //新闻与活动详情
+                {
+                    path: 'news/detail/:id',
+                    name: 'page_news_detail_en',
+                    component: PAGE_NEWS_DETAIL_EN,
+                },
                 // our network
                 {
                     path: 'resource',
