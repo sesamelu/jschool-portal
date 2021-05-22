@@ -126,7 +126,12 @@ export default {
                 },
                 {
                     label: "学部介绍",
-                    name: "page_schools_ch",
+                    name: [
+                        "page_schools_ch",
+                        "page_schools_kindgarten_ch",
+                        "page_schools_primary_ch",
+                        "page_schools_high_ch"
+                    ],
                     routerName: "page_schools_ch",
                 },
                 {

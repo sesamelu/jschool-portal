@@ -108,7 +108,12 @@ export default {
                 },
                 {
                     label: "SCHOOLS",
-                    name: "page_schools_en",
+                    name: [
+                        "page_schools_en",
+                        "page_kindgarten_en",
+                        "page_primary_en",
+                        "page_high_en"
+                    ],
                     routerName: "page_schools_en",
                 },
                 {

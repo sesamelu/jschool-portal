@@ -9,6 +9,10 @@ const PAGE_ORGANIZER_CH =()=> import('./chinese/Organizer.vue')
 const PAGE_PROFILE_CH =()=> import('./chinese/Profile.vue')
 // 学部介绍
 const PAGE_SCHOOLS_CH =()=> import('./chinese/schools.vue')
+    // 幼儿园 小学 高中
+const PAGE_SCHOOLS_KINDGARTEN_CH =()=> import('./chinese/kindgarten.vue')
+const PAGE_SCHOOLS_PRIMARY_CH =()=> import('./chinese/primary.vue')
+const PAGE_SCHOOLS_HIGH_CH =()=> import('./chinese/high.vue')
 //创始人的话
 const PAGE_ORGANIZERWORD_CH =()=> import('./chinese/organizerWord.vue')
 //新闻与活动
@@ -101,6 +105,24 @@ export default new Router({
                     path: 'schools',
                     name: 'page_schools_ch',
                     component: PAGE_SCHOOLS_CH,
+                },
+                //幼儿园
+                {
+                    path: 'schools/kindgarten',
+                    name: 'page_schools_kindgarten_ch',
+                    component: PAGE_SCHOOLS_KINDGARTEN_CH,
+                },
+                //小学
+                {
+                    path: 'schools/primary',
+                    name: 'page_schools_primary_ch',
+                    component: PAGE_SCHOOLS_PRIMARY_CH,
+                },
+                //高中
+                {
+                    path: 'schools/high',
+                    name: 'page_schools_high_ch',
+                    component: PAGE_SCHOOLS_HIGH_CH,
                 },
                 //创始人的话
                 {

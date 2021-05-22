@@ -8,108 +8,27 @@
                     <div class="right-mask">
                     </div>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide index-first index-first-new ">
+                        <div class="swiper-slide index-first index-first-new " 
+                        v-for="item in swiperList"
+                        :key="item.id"
+                        >
                             <div class="index-picture-part-wrapper">
                                 <div
                                     class="ih-item square effect6 from_top_and_bottom square-picture"
                                 >
-                                    <a href="#">
+                                    <!-- <a href="#"> -->
                                         <div class="img">
                                             <img
-                                                src="@assets/img/images/index1.png"
+                                                :src="item.imgLink"
                                                 alt="img"
                                             />
                                         </div>
-                                    </a>
+                                    <!-- </a> -->
                                 </div>
                             </div>
                             <div class="index-word-part index-word-location index-new">
                                 <span class="index-words-content"
-                                    >从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复</span
-                                >
-                            </div>
-                        </div>
-                        <div class="swiper-slide index-first index-first-new ">
-                            <div class="index-picture-part-wrapper">
-                                <div
-                                    class="ih-item square effect6 from_top_and_bottom square-picture"
-                                >
-                                    <a href="#">
-                                        <div class="img">
-                                            <img
-                                                src="@assets/img/images/index1.png"
-                                                alt="img"
-                                            />
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="index-word-part index-word-location index-new">
-                                <span class="index-words-content"
-                                    >22222第二页第二是否出席那省略的话放假的时候房价快速导航附件是的回复积分活动时间发页第二页</span
-                                >
-                            </div>
-                        </div>
-                        <div class="swiper-slide index-first index-first-new ">
-                            <div class="index-picture-part-wrapper">
-                                <div
-                                    class="ih-item square effect6 from_top_and_bottom square-picture"
-                                >
-                                    <a href="#">
-                                        <div class="img">
-                                            <img
-                                                src="@assets/img/images/index1.png"
-                                                alt="img"
-                                            />
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="index-word-part index-word-location index-new">
-                                <span class="index-words-content"
-                                    >33第三页第三页第三页</span
-                                >
-                            </div>
-                        </div>
-                        <div class="swiper-slide index-first index-first-new ">
-                            <div class="index-picture-part-wrapper">
-                                <div
-                                    class="ih-item square effect6 from_top_and_bottom square-picture"
-                                >
-                                    <a href="#">
-                                        <div class="img">
-                                            <img
-                                                src="@assets/img/images/index1.png"
-                                                alt="img"
-                                            />
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="index-word-part index-word-location index-new">
-                                <span class="index-words-content"
-                                    >第四</span
-                                >
-                            </div>
-                        </div>
-                        <div class="swiper-slide index-first index-first-new ">
-                            <div class="index-picture-part-wrapper">
-                                <div
-                                    class="ih-item square effect6 from_top_and_bottom square-picture"
-                                >
-                                    <a href="#">
-                                        <div class="img">
-                                            <img
-                                                src="@assets/img/images/index1.png"
-                                                alt="img"
-                                            />
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="index-word-part index-word-location index-new">
-                                <span class="index-words-content"
-                                    >第五页</span
+                                    >{{item.title}}</span
                                 >
                             </div>
                         </div>
@@ -134,7 +53,7 @@
                                 <div
                                     class="ih-item square colored effect13 bottom_to_top"
                                 >
-                                    <a >
+                                    <a @click="goDepartment('kindgarten')" style="cursor:pointer;">
                                         <div
                                             class="img"
                                             style="position: relative"
@@ -163,7 +82,7 @@
                                                     ></span>
                                                 </div>
                                                 <span class="schools-part-title"
-                                                    >幼儿园</span
+                                                    >{{departmentList && departmentList[0].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -178,11 +97,11 @@
                                             <div
                                                 class="schools-part-title-info"
                                             >
-                                                幼儿园
+                                                {{departmentList && departmentList[0].name}}
                                             </div>
                                             <div>
                                                 <span class="introduce-Info">
-                                                    幼儿园以哈佛大学Gartner教授提出的多元智能理论为基础，结合英国学前教育国家课程(EYFS)和上海市学前教育大纲，采用先进的幼儿教学理念和教学方法，采用英文半浸润的教学环境，开展游戏、音乐、艺术、体育运动等各方面的课程。
+                                                    {{departmentList && departmentList[0].summaryEditor}}
                                                 </span>
                                             </div>
                                             <div class="more-info-button">
@@ -202,7 +121,7 @@
                                 <div
                                     class="ih-item square colored effect13 bottom_to_top"
                                 >
-                                    <a href="@assets/pages/primary.html">
+                                    <a @click="goDepartment('primary')" style="cursor:pointer;">
                                         <div
                                             class="img"
                                             style="position: relative"
@@ -231,7 +150,7 @@
                                                     ></span>
                                                 </div>
                                                 <span class="schools-part-title"
-                                                    >小学初中部</span
+                                                    >{{departmentList && departmentList[1].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -246,11 +165,11 @@
                                             <div
                                                 class="schools-part-title-info"
                                             >
-                                                小学初中部
+                                                {{departmentList && departmentList[1].name}}
                                             </div>
                                             <div>
                                                 <span class="introduce-Info">
-                                                    学校按照国际学校标准设计建设，全部采取国际学校标准的教学设备、设施及教育教学材料。学校教学采用国家规定的课程及教材，实施部分双语教学以及丰富的校本课程，同时在课程设置中加强体育、艺术课程的内容。学校将长期聘用英国、美国、加拿大等英语母语国家的外教，为学生提供纯正的外语学习环境。
+                                                    {{departmentList && departmentList[1].summaryEditor}}
                                                 </span>
                                             </div>
                                             <div class="center-btn">
@@ -272,7 +191,7 @@
                                 <div
                                     class="ih-item square colored effect13 bottom_to_top"
                                 >
-                                    <a >
+                                    <a @click="goDepartment('high')" style="cursor:pointer;">
                                         <div
                                             class="img"
                                             style="position: relative"
@@ -301,7 +220,7 @@
                                                     ></span>
                                                 </div>
                                                 <span class="schools-part-title"
-                                                    >高中部</span
+                                                    >{{departmentList && departmentList[2].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -316,11 +235,11 @@
                                             <div
                                                 class="schools-part-title-info"
                                             >
-                                                高中部
+                                                {{departmentList && departmentList[2].name}}
                                             </div>
                                             <div>
                                                 <span class="introduce-Info">
-                                                    学校按照国际学校标准设计建设，全部采取国际学校标准的教学设备、设施及教育教学材料。齐舜高中为全寄宿并强化日常管理。学校拥有一支非常优秀的教师团队，教学上结合齐舜教育集团国内外广泛且有效的教育资源，通过自适应学习等人工智能新技术，帮助学生更有效地学习。
+                                                    {{departmentList && departmentList[2].summaryEditor}}
                                                 </span>
                                             </div>
                                             <div class="center-btn">
@@ -503,36 +422,16 @@
                 教育资源及合作伙伴
             </div>
             <div class="other-school">
-                <div class="school-item">
+                <div class="school-item" 
+                v-for="item in resourceList"
+                :key="item.id">
                     <div
                         class="ih-item square effect6 from_top_and_bottom square-picture"
                     >
-                        <a >
+                        <a @click="goResouce(item.link)" style="cursor:pointer;">
                             <div class="img">
                                 <img
-                                    src="@assets/img/images/FPS Logo-index.png"
-                                    alt="img"
-                                />
-                            </div>
-                            <div
-                                class="info info-resource info-resource-first"
-                                style="background-color: #1c305c; opacity: 0.76"
-                            >
-                                <span class="link-word"
-                                    >Francis Parker School</span
-                                >
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="school-item">
-                    <div
-                        class="ih-item square effect6 from_top_and_bottom square-picture"
-                    >
-                        <a href="https://www.ljcds.org/page">
-                            <div class="img">
-                                <img
-                                    src="@assets/img/images/LJCDS Logo-index.png"
+                                    :src="item.logoUrl"
                                     alt="img"
                                 />
                             </div>
@@ -541,88 +440,8 @@
                                 style="background-color: #1c305c; opacity: 0.76"
                             >
                                 <span class="link-word"
-                                    >La Jolla Country Day School</span
+                                    >{{item.title}}</span
                                 >
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="school-item">
-                    <div
-                        class="ih-item square effect6 from_top_and_bottom square-picture"
-                    >
-                        <a href="https://shanghai-pudong.dulwich.org">
-                            <div class="img">
-                                <img
-                                    src="@assets/img/images/deweilogo-index.png"
-                                    alt="img"
-                                />
-                            </div>
-                            <div
-                                class="info info-resource"
-                                style="background-color: #1c305c; opacity: 0.76"
-                            >
-                                <span class="link-word">德威英国国际学校</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="school-item">
-                    <div
-                        class="ih-item square effect6 from_top_and_bottom square-picture"
-                    >
-                        <a href="http://ieducationm.com">
-                            <div class="img">
-                                <img
-                                    src="@assets/img/images/IEM-index.png"
-                                    alt="img"
-                                />
-                            </div>
-                            <div
-                                class="info info-resource"
-                                style="background-color: #1c305c; opacity: 0.76"
-                            >
-                                <span class="link-word">IEM</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="school-item">
-                    <div
-                        class="ih-item square effect6 from_top_and_bottom square-picture"
-                    >
-                        <a href="http://t.school">
-                            <div class="img">
-                                <img
-                                    src="@assets/img/images/T School Logo-index.png"
-                                    alt="img"
-                                />
-                            </div>
-                            <div
-                                class="info info-resource"
-                                style="background-color: #1c305c; opacity: 0.76"
-                            >
-                                <span class="link-word">T School</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="school-item">
-                    <div
-                        class="ih-item square effect6 from_top_and_bottom square-picture"
-                    >
-                        <a href="http://yangcong345.com/student.html">
-                            <div class="img">
-                                <img
-                                    src="@assets/img/images/onion-index.png"
-                                    alt="img"
-                                />
-                            </div>
-                            <div
-                                class="info info-resource"
-                                style="background-color: #1c305c; opacity: 0.76"
-                            >
-                                <span class="link-word">洋葱数学</span>
                             </div>
                         </a>
                     </div>
@@ -637,37 +456,228 @@ export default {
     name: "chinese_index",
     created() {},
     data() {
-        return {};
+        return {
+            swiperList:[
+                {
+                    id:1,
+                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                    title:'从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复',
+                    editDate:'2021-01-11 12:00:21',
+                },
+                {
+                    id:2,
+                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                    title:'随便写的',
+                    editDate:'2021-01-11 12:00:21',
+                },
+                {
+                    id:3,
+                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                    title:'活动照片',
+                    editDate:'2021-01-11 12:00:21',
+                },
+                {
+                    id:4,
+                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                    title:'随便写的',
+                    editDate:'2021-01-11 12:00:21',
+                },
+                {
+                    id:5,
+                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                    title:'随便写的',
+                    editDate:'2021-01-11 12:00:21',
+                },
+            ],
+            //学部介绍
+            departmentList:[
+                {
+                    id:1,
+                    name:'幼儿园',
+                    editDate:'编辑时间',
+                    summaryEditor:'编辑时间概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
+                    contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                },
+                {
+                    id:2,
+                    name:'小学初中部',
+                    editDate:'编辑时间',
+                    summaryEditor:'小学初中部门概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
+                    contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                },
+                {
+                    id:3,
+                    name:'高中部',
+                    editDate:'编辑时间',
+                    summaryEditor:'高中部概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
+                    contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                }
+            ],
+            // 教育资源及合作伙伴
+            resourceList: [
+                {
+                    id: 1,
+                    title: "Francis",
+                    link: "https://www.francisparker.org/page",
+                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                    editDate: "2021-01-11 12:00:21",
+                },
+                {
+                    id: 2,
+                    title: "Francis Parker School",
+                    link: "https://www.francisparker.org/page",
+                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                    editDate: "2021-01-11 12:00:21",
+                },
+                {
+                    id: 3,
+                    title: "德威英国",
+                    link: "https://www.francisparker.org/page",
+                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                    editDate: "2021-01-11 12:00:21",
+                },
+                {
+                    id: 4,
+                    title: "Francis",
+                    link: "https://www.francisparker.org/page",
+                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                    editDate: "2021-01-11 12:00:21",
+                },
+                {
+                    id: 5,
+                    title: "Francis Parker School",
+                    link: "https://www.francisparker.org/page",
+                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                    editDate: "2021-01-11 12:00:21",
+                },
+                {
+                    id: 6,
+                    title: "德威英国",
+                    link: "https://www.francisparker.org/page",
+                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                    editDate: "2021-01-11 12:00:21",
+                },
+            ], 
+        };
     },
     mounted() {
-        new Swiper ('.swiper-container', {
-            loop: true,
-            initialSlide :0,
-            spaceBetween: 20,
-            slidesPerView: 'auto',
-            centeredSlides: true,
-            paginationClickable: true,
-            // 如果需要分页器
-            pagination: '.swiper-pagination',
-            // paginationBulletRender: function (swiper, index, className) {
-            //     return '<span class="'+className+'" style="width:60px;height:4px;border-radius:0;display:inline-block;margin-right:16px;"></span>';
-            // },
-            // 如果需要前进后退按钮
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            // slidesOffsetBefore:100,
-            // slidesOffsetAfter:100,
-            // 如果需要滚动条
-            // scrollbar: '.swiper-scrollbar',
-            //如果需要自动切换海报
-            // autoplay: {
-            //   delay: 1000,//时间 毫秒
-            //   disableOnInteraction: false,//用户操作之后是否停止自动轮播默认true
-            // },
-      })
+        this.initSwiper()
+        this.getSwiperList()
+        this.getDepartmentList()
+       
     
     },
-    methods: {},
+    methods: {
+        // 初始化轮播图
+        initSwiper(){
+            new Swiper ('.swiper-container', {
+                loop: true,
+                initialSlide :0,
+                spaceBetween: 20,
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                paginationClickable: true,
+                // 如果需要分页器
+                pagination: '.swiper-pagination',
+                // paginationBulletRender: function (swiper, index, className) {
+                //     return '<span class="'+className+'" style="width:60px;height:4px;border-radius:0;display:inline-block;margin-right:16px;"></span>';
+                // },
+                // 如果需要前进后退按钮
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                // slidesOffsetBefore:100,
+                // slidesOffsetAfter:100,
+                // 如果需要滚动条
+                // scrollbar: '.swiper-scrollbar',
+                //如果需要自动切换海报
+                // autoplay: {
+                //   delay: 1000,//时间 毫秒
+                //   disableOnInteraction: false,//用户操作之后是否停止自动轮播默认true
+                // },
+            })
+        },
+        //获取轮播图列表数据
+        getSwiperList(){
+            let params = {
+                type: 'ch',
+            };
+            this.$http.get("/qishun/deployServer/homePageList", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        if (0 === res.result) {
+                            this.swiperList = res.result.list;
+                        }
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取轮播图列表失败");
+                });
+        },
+        //获取学部介绍列表数据
+        getDepartmentList(){
+            let params = {
+                type: 'ch',
+            };
+            this.$http
+            .get("/qishun/deployServer/departmentList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.departmentList = res.result.list;
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
+        //教育资源列表
+        getList(){
+            let params = {
+                type: 'ch',
+                pageSize: 6,
+                pageNumber: 1
+            };
+            this.$http
+            .get("/qishun/deployServer/schoolResourceList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.resourceList = res.result.list;
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
+        //点击学部跳转
+        goDepartment(type){
+            let routerName = "";
+            switch(type){
+                case 'kindgarten':
+                    routerName = 'page_schools_kindgarten_ch';
+                    break;
+                case 'primary':
+                    routerName = 'page_schools_primary_ch';
+                    break;
+                case 'high':
+                    routerName = 'page_schools_high_ch';
+                    break;
+            }
+            this.$router.push({
+                name: routerName
+            })
+
+        },
+        //点击资源 跳转
+        goResouce(link){
+            window.open(link)
+        }
+        
+    },
 
     components: {},
 };

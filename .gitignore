@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-
+/jschool-portal
+jschool-portal.rar
 
 # local env files
 .env.local

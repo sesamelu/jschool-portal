@@ -5,17 +5,17 @@
                 <div class="kindergarten-link-title">
                     <div class="kindergarten-link">
                         <div class="link-item">
-                            <a href="@assets/enPages/enSchools.html"
+                            <a @click="goBack('schools')"
                                 >&lt;&lt;&nbsp;Back
                             </a>
                         </div>
                         <div class="link-item">
-                            <a href="@assets/enPages/enKindgarten.html"
+                            <a @click="goBack('kindgarten')"
                                 >&lt;&lt;&nbsp;Kindergarten</a
                             >
                         </div>
                         <div class="link-item">
-                            <a href="@assets/enPages/enHigh.html"
+                            <a @click="goBack('high')"
                                 >&lt;&lt;&nbsp;High School</a
                             >
                         </div>
@@ -84,7 +84,29 @@ export default {
         return {};
     },
     mounted() {},
-    methods: {},
+    methods: {
+        //点击学部跳转
+        goBack(type){
+            let routerName = "";
+            switch(type){
+                case 'schools':
+                    routerName = 'page_schools_en';
+                    break;
+                case 'kindgarten':
+                    routerName = 'page_kindgarten_en';
+                    break;
+                case 'primary':
+                    routerName = 'page_primary_en';
+                    break;
+                case 'high':
+                    routerName = 'page_high_en';
+                    break;
+            }
+            this.$router.push({
+                name: routerName
+            })
+        },
+    },
 };
 </script>
 <style scoped lang="scss">

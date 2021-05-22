@@ -44,7 +44,7 @@
                         <div
                             class="ih-item square colored effect13 bottom_to_top"
                         >
-                            <a>
+                            <a @click="goDepartment('kindgarten')" style="cursor:pointer;">
                                 <div class="img" style="position: relative">
                                     <img
                                         class="schools-img-column"
@@ -68,7 +68,7 @@
                                             <span class="Underline-bar"></span>
                                         </div>
                                         <span class="schools-part-title"
-                                            >Kindergarten
+                                            >{{departmentList && departmentList[0].name}}
                                         </span>
                                     </div>
                                 </div>
@@ -81,19 +81,11 @@
                                         />
                                     </div>
                                     <div class="schools-part-title-info">
-                                        Kindergarten
+                                        {{departmentList && departmentList[0].name}}
                                     </div>
                                     <div>
                                         <span class="introduce-Info">
-                                            In kindergarten, we mainly adopt the
-                                            curriculum of Early Years Foundation
-                                            Stage (EYFS) - a UK government
-                                            framework that sets out welfare and
-                                            development goals for children aged
-                                            five and under. In this curriculum
-                                            we offer Mandarin – English
-                                            bilingual education, and through
-                                            games, music, arts, sports and etc.
+                                           {{departmentList && departmentList[0].summaryEditor}}
                                         </span>
                                     </div>
                                     <div class="more-info-button">More</div>
@@ -111,7 +103,7 @@
                         <div
                             class="ih-item square colored effect13 bottom_to_top"
                         >
-                            <a>
+                            <a @click="goDepartment('primary')" style="cursor:pointer;">
                                 <div class="img" style="position: relative">
                                     <img
                                         class="schools-img-column"
@@ -135,7 +127,7 @@
                                             <span class="Underline-bar"></span>
                                         </div>
                                         <span class="schools-part-title"
-                                            >Primary And Middle School</span
+                                            >{{departmentList && departmentList[1].name}}</span
                                         >
                                     </div>
                                 </div>
@@ -148,18 +140,11 @@
                                         />
                                     </div>
                                     <div class="schools-part-title-info">
-                                        Primary And Middle School
+                                        {{departmentList && departmentList[1].name}}
                                     </div>
                                     <div>
                                         <span class="introduce-Info">
-                                            In primary and middle school, we
-                                            mainly adopt Chinese national
-                                            curriculum, with partially bilingual
-                                            education and school-designed
-                                            curriculum. In the teaching team,
-                                            besides excellent teachers from all
-                                            over China, we also have experienced
-                                            teachers from overseas .
+                                            {{departmentList && departmentList[1].summaryEditor}}
                                         </span>
                                     </div>
                                     <div class="center-btn">
@@ -179,7 +164,7 @@
                         <div
                             class="ih-item square colored effect13 bottom_to_top"
                         >
-                            <a>
+                            <a @click="goDepartment('high')" style="cursor:pointer;">
                                 <div class="img" style="position: relative">
                                     <img
                                         class="schools-img-column"
@@ -203,7 +188,7 @@
                                             <span class="Underline-bar"></span>
                                         </div>
                                         <span class="schools-part-title"
-                                            >High School</span
+                                            >{{departmentList && departmentList[2].name}}</span
                                         >
                                     </div>
                                 </div>
@@ -216,19 +201,11 @@
                                         />
                                     </div>
                                     <div class="schools-part-title-info">
-                                        High School
+                                        {{departmentList && departmentList[2].name}}
                                     </div>
                                     <div>
                                         <span class="introduce-Info">
-                                            In J. School, we are trying to
-                                            utilize the technology of artificial
-                                            intelligence and deep learning to
-                                            personalize the learning for each
-                                            student and hence boost the learning
-                                            efficiency. In doing so, students
-                                            will be able to spend less time on
-                                            repeated practice while maintain
-                                            good results on tests.
+                                            {{departmentList && departmentList[2].summaryEditor}}
                                         </span>
                                     </div>
                                     <div class="center-btn">
@@ -248,10 +225,75 @@
 <script>
 export default {
     data() {
-        return {};
+        return {
+            //学部介绍
+            departmentList:[
+                {
+                    id:1,
+                    name:'Kindergarten',
+                    editDate:'编辑时间',
+                    summaryEditor:'KindergartenKindergartenKindergartenKindergartenKindergartenKindergarten',
+                    contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                },
+                {
+                    id:2,
+                    name:'Primary And Middle School',
+                    editDate:'编辑时间',
+                    summaryEditor:'Primary And Middle SchoolPrimary And Middle SchoolPrimary And Middle SchoolPrimary And Middle School',
+                    contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                },
+                {
+                    id:3,
+                    name:'High School',
+                    editDate:'编辑时间',
+                    summaryEditor:'High SchoolHigh SchoolHigh SchoolHigh SchoolHigh School',
+                    contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                }
+            ],
+        };
     },
-    mounted() {},
-    methods: {},
+    mounted() {
+        this.getDepartmentList()
+    },
+    methods: {
+        //获取学部介绍列表数据
+        getDepartmentList(){
+            let params = {
+                type: 'en',
+            };
+            this.$http
+            .get("/qishun/deployServer/departmentList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.departmentList = res.result.list;
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
+        //点击学部跳转
+        goDepartment(type){
+            let routerName = "";
+            switch(type){
+                case 'kindgarten':
+                    routerName = 'page_kindgarten_en';
+                    break;
+                case 'primary':
+                    routerName = 'page_primary_en';
+                    break;
+                case 'high':
+                    routerName = 'page_high_en';
+                    break;
+            }
+            this.$router.push({
+                name: routerName
+            })
+
+        },
+    },
 };
 </script>
 <style scoped lang="scss">
