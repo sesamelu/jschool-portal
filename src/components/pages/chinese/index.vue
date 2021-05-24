@@ -53,7 +53,7 @@
                                 <div
                                     class="ih-item square colored effect13 bottom_to_top"
                                 >
-                                    <a @click="goDepartment('kindgarten')" style="cursor:pointer;">
+                                    <a @click="goDepartment('kindgarten',departmentList[0].id)" style="cursor:pointer;">
                                         <div
                                             class="img"
                                             style="position: relative"
@@ -121,7 +121,7 @@
                                 <div
                                     class="ih-item square colored effect13 bottom_to_top"
                                 >
-                                    <a @click="goDepartment('primary')" style="cursor:pointer;">
+                                    <a @click="goDepartment('primary',departmentList[1].id)" style="cursor:pointer;">
                                         <div
                                             class="img"
                                             style="position: relative"
@@ -191,7 +191,7 @@
                                 <div
                                     class="ih-item square colored effect13 bottom_to_top"
                                 >
-                                    <a @click="goDepartment('high')" style="cursor:pointer;">
+                                    <a @click="goDepartment('high',departmentList[2].id)" style="cursor:pointer;">
                                         <div
                                             class="img"
                                             style="position: relative"
@@ -654,7 +654,7 @@ export default {
             });
         },
         //点击学部跳转
-        goDepartment(type){
+        goDepartment(type,id){
             let routerName = "";
             switch(type){
                 case 'kindgarten':
@@ -668,7 +668,10 @@ export default {
                     break;
             }
             this.$router.push({
-                name: routerName
+                name: routerName,
+                // query:{
+                //     id:id
+                // }
             })
 
         },
