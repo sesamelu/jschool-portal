@@ -401,10 +401,25 @@ body {
 .introduce-Info {
     text-indent: 2em;
     margin: 34px 20px;
-    display: inline-block;
+    /* display: inline-block; */
     color: #fff;
     text-align: left;
     line-height: 24px;
+    
+}
+.ih-item.square.effect13 .info .introduce-Info p{
+    text-indent: 2em;
+    margin: 34px 20px;
+    /* display: inline-block; */
+    color: #fff;
+    text-align: left;
+    line-height: 24px;
+    font-style:normal;
+    font-size: 1.6rem;
+    margin:0;
+    padding:0;
+    text-indent: justify;
+    word-break:break-word;
 }
 
 .active {

@@ -31,8 +31,12 @@
                     </div>
                 </div>
             </div>
-
-            <div class="brige">
+            <!-- <div class="brige">
+            </div> -->
+            <div class="info-word" style="height: 24px"></div>
+            <div class="info-word" v-html="content">
+            </div>
+            <!-- <div class="brige">
                 <div>Qishun Schools: A Bridge to the World and Future</div>
                 <div class="info-word" style="height: 24px"></div>
                 <div style="text-indent: 7em">—— My dream on Education</div>
@@ -119,17 +123,39 @@
                 <div class="info-word" style="text-align: right">
                     Jieshou, Anhui, Chin
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
 <script>
 export default {
     data() {
-        return {};
+        return {
+            content:""
+        };
     },
-    mounted() {},
-    methods: {},
+    mounted() {
+        this.getContent()
+    },
+    methods: {
+        getContent() {
+            let params = {
+                type: 'enOurPeople',
+            };
+            this.$http
+                .get("/qishun/deployServer/nonListInfo", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.content = res.result.info.content;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取数据失败");
+                });
+        },
+    },
 };
 </script>
 <style scoped lang="scss">

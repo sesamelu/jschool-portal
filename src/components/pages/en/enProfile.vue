@@ -25,7 +25,10 @@
         </div>
         <div class="schools-kindergarten en">
             <div class="kindergarten-info-title en">
-                <div class="info-word">
+                <div class="info-word" style="height: 24px"></div>
+                <div class="info-word" v-html="content">
+                </div>
+                <!-- <div class="info-word">
                     J. School, an independent K-12 boarding school opened by
                     Shanghai Qishun Education Group is located in Jieshou, Anhui
                     Province, China. The school campus is equipped with
@@ -109,7 +112,7 @@
                 <div class="info-word">
                     If you have any inquiry about J. School, please email us
                     at:<span style="color: #0066cc"> info@inqishun.com</span>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -117,10 +120,32 @@
 <script>
 export default {
     data() {
-        return {};
+        return {
+            content:""
+        };
     },
-    mounted() {},
-    methods: {},
+    mounted() {
+        this.getContent();
+    },
+    methods: {
+        getContent() {
+            let params = {
+                type: 'enAboutUs',
+            };
+            this.$http
+                .get("/qishun/deployServer/nonListInfo", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.content = res.result.info.content;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取数据失败");
+                });
+        },
+    },
 };
 </script>
 <style scoped lang="scss">

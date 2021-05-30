@@ -89,7 +89,7 @@ export default {
         };
     },
     mounted() {
-
+        this.getContent()
     },
     methods: {
         getContent() {

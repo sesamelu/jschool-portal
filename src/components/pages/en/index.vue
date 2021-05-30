@@ -80,8 +80,8 @@
                                                         class="Underline-bar"
                                                     ></span>
                                                 </div>
-                                                <span class="schools-part-title"
-                                                    >{{departmentList && departmentList[0].name}}
+                                                <span class="schools-part-title" v-if="departmentList.length>0"
+                                                    >{{departmentList[0].name}}
                                                 </span>
                                             </div>
                                         </div>
@@ -94,13 +94,13 @@
                                                 />
                                             </div>
                                             <div
-                                                class="schools-part-title-info"
+                                                class="schools-part-title-info" v-if="departmentList.length>0"
                                             >
-                                                {{departmentList && departmentList[0].name}}
+                                                {{departmentList[0].name}}
                                             </div>
                                             <div>
-                                                <span class="introduce-Info">
-                                                    {{departmentList && departmentList[0].summaryEditor}}
+                                                <span class="introduce-Info" v-if="departmentList.length>0">
+                                                    {{departmentList[0].summaryEditor}}
                                                 </span>
                                             </div>
                                             <div class="more-info-button">
@@ -148,8 +148,8 @@
                                                         class="Underline-bar"
                                                     ></span>
                                                 </div>
-                                                <span class="schools-part-title"
-                                                    >{{departmentList && departmentList[1].name}}</span
+                                                <span class="schools-part-title" v-if="departmentList.length>1"
+                                                    >{{departmentList[1].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -163,12 +163,13 @@
                                             </div>
                                             <div
                                                 class="schools-part-title-info"
+                                                v-if="departmentList.length>1"
                                             >
-                                                {{departmentList && departmentList[1].name}}
+                                                {{departmentList[1].name}}
                                             </div>
                                             <div>
-                                                <span class="introduce-Info">
-                                                    {{departmentList && departmentList[1].summaryEditor}}
+                                                <span class="introduce-Info" v-if="departmentList.length>1">
+                                                    {{departmentList[1].summaryEditor}}
                                                 </span>
                                             </div>
                                             <div class="center-btn">
@@ -219,7 +220,8 @@
                                                     ></span>
                                                 </div>
                                                 <span class="schools-part-title"
-                                                    >{{departmentList && departmentList[2].name}}</span
+                                                v-if="departmentList.length>2"
+                                                    >{{departmentList[2].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -233,12 +235,13 @@
                                             </div>
                                             <div
                                                 class="schools-part-title-info"
+                                                v-if="departmentList.length>2"
                                             >
-                                                {{departmentList && departmentList[2].name}}
+                                                {{departmentList[2].name}}
                                             </div>
                                             <div>
-                                                <span class="introduce-Info">
-                                                    {{departmentList && departmentList[2].summaryEditor}}
+                                                <span class="introduce-Info" v-if="departmentList.length>2">
+                                                    {{departmentList[2].summaryEditor}}
                                                 </span>
                                             </div>
                                             <div class="center-btn">
@@ -450,112 +453,113 @@ export default {
     data() {
         return {
             swiperList:[
-                {
-                    id:1,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:2,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'随便写的',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:3,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'活动照片',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:4,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'随便写的',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:5,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'随便写的',
-                    editDate:'2021-01-11 12:00:21',
-                },
+                // {
+                //     id:1,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:2,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:3,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'活动照片',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:4,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:5,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
             ],
             //学部介绍
             departmentList:[
-                {
-                    id:1,
-                    name:'Kindergarten',
-                    editDate:'编辑时间',
-                    summaryEditor:'KindergartenKindergartenKindergartenKindergartenKindergartenKindergarten',
-                    contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                },
-                {
-                    id:2,
-                    name:'Primary And Middle School',
-                    editDate:'编辑时间',
-                    summaryEditor:'Primary And Middle SchoolPrimary And Middle SchoolPrimary And Middle SchoolPrimary And Middle School',
-                    contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                },
-                {
-                    id:3,
-                    name:'High School',
-                    editDate:'编辑时间',
-                    summaryEditor:'High SchoolHigh SchoolHigh SchoolHigh SchoolHigh School',
-                    contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                }
+                // {
+                //     id:1,
+                //     name:'Kindergarten',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'KindergartenKindergartenKindergartenKindergartenKindergartenKindergarten',
+                //     contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // },
+                // {
+                //     id:2,
+                //     name:'Primary And Middle School',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'Primary And Middle SchoolPrimary And Middle SchoolPrimary And Middle SchoolPrimary And Middle School',
+                //     contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // },
+                // {
+                //     id:3,
+                //     name:'High School',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'High SchoolHigh SchoolHigh SchoolHigh SchoolHigh School',
+                //     contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // }
             ],
             // 教育资源及合作伙伴
             resourceList: [
-                {
-                    id: 1,
-                    title: "Francis",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 2,
-                    title: "Francis Parker School",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 3,
-                    title: "德威英国",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 4,
-                    title: "Francis",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 5,
-                    title: "Francis Parker School",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 6,
-                    title: "德威英国",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
+                // {
+                //     id: 1,
+                //     title: "Francis",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 2,
+                //     title: "Francis Parker School",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 3,
+                //     title: "德威英国",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 4,
+                //     title: "Francis",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 5,
+                //     title: "Francis Parker School",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 6,
+                //     title: "德威英国",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
             ], 
         };
     },
     mounted() {
-        this.initSwiper()
         this.getSwiperList()
         this.getDepartmentList()
+        this.getList()
+        this.initSwiper()
          
     },
     methods: {
@@ -595,9 +599,7 @@ export default {
             this.$http.get("/qishun/deployServer/homePageList", params, this)
                 .then((res) => {
                     if (0 === res.code) {
-                        if (0 === res.result) {
-                            this.swiperList = res.result.list;
-                        }
+                        this.swiperList = res.result.list;
                     } else {
                         // this.$message.error(res.resultMessage);
                     }

@@ -77,10 +77,11 @@
                                             />
                                         </div>
                                         <div class="address-item-word">
-                                            Admission
+                                            <!-- Admission
                                             Office:&nbsp;&nbsp;689Guangwu Ave,
                                             Building 6,Rm 409-410, Jieshou,
-                                            Anhui, China
+                                            Anhui, China -->
+                                            &nbsp;Main Campus:&nbsp;&nbsp;Yinghe Road, Yingnan District, Jieshou, Anhui Province
                                         </div>
                                     </div>
                                     <div class="address-item address-flex">
@@ -91,10 +92,11 @@
                                             />
                                         </div>
                                         <div class="address-item-word">
-                                            &nbsp;Main
+                                            <!-- &nbsp;Main
                                             Campus:&nbsp;&nbsp;Yingnan
                                             Ave,&nbsp;YingNan New District,
-                                            Jieshou, Anhui, China
+                                            Jieshou, Anhui, China -->
+                                            &nbsp;Kindergarten:&nbsp;&nbsp;Botanical Garden Residence Phase I, Yingnan District, Jieshou, Anhui Province
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +114,7 @@
                                     />
                                     <div>J·SCHOOL</div>
                                 </div>
-                                <div class="WChart-code-item">
+                                <!-- <div class="WChart-code-item">
                                     <img
                                         src="@assets/img/icon/code_recruit_students.png"
                                         alt=""
@@ -132,7 +134,7 @@
                                         alt=""
                                     />
                                     <div>INQUIRIES</div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

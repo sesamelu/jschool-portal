@@ -81,8 +81,8 @@
                                                         class="Underline-bar"
                                                     ></span>
                                                 </div>
-                                                <span class="schools-part-title"
-                                                    >{{departmentList && departmentList[0].name}}</span
+                                                <span class="schools-part-title" v-if="departmentList.length>0"
+                                                    >{{departmentList[0].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -95,14 +95,13 @@
                                                 />
                                             </div>
                                             <div
-                                                class="schools-part-title-info"
+                                                class="schools-part-title-info" v-if="departmentList.length>0"
                                             >
-                                                {{departmentList && departmentList[0].name}}
+                                                {{departmentList[0].name}}
                                             </div>
-                                            <div>
-                                                <span class="introduce-Info">
-                                                    {{departmentList && departmentList[0].summaryEditor}}
-                                                </span>
+                                            <div class="introduce-Info" v-if="departmentList.length>0" v-html="departmentList[0].summaryEditor">
+                                                <!-- <span class="introduce-Info" v-html="departmentList[0].summaryEditor">
+                                                </span> -->
                                             </div>
                                             <div class="more-info-button">
                                                 了解更多
@@ -149,8 +148,8 @@
                                                         class="Underline-bar"
                                                     ></span>
                                                 </div>
-                                                <span class="schools-part-title"
-                                                    >{{departmentList && departmentList[1].name}}</span
+                                                <span class="schools-part-title" v-if="departmentList.length>1"
+                                                    >{{departmentList[1].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -163,14 +162,13 @@
                                                 />
                                             </div>
                                             <div
-                                                class="schools-part-title-info"
+                                                class="schools-part-title-info" v-if="departmentList.length>1"
                                             >
-                                                {{departmentList && departmentList[1].name}}
+                                                {{departmentList[1].name}}
                                             </div>
-                                            <div>
-                                                <span class="introduce-Info">
-                                                    {{departmentList && departmentList[1].summaryEditor}}
-                                                </span>
+                                            <div class="introduce-Info" v-if="departmentList.length>1" v-html="departmentList[1].summaryEditor">
+                                                <!-- <span class="introduce-Info" v-html="departmentList[1].summaryEditor">
+                                                </span> -->
                                             </div>
                                             <div class="center-btn">
                                                 <div class="more-info-button">
@@ -219,8 +217,8 @@
                                                         class="Underline-bar"
                                                     ></span>
                                                 </div>
-                                                <span class="schools-part-title"
-                                                    >{{departmentList && departmentList[2].name}}</span
+                                                <span class="schools-part-title" v-if="departmentList.length>2"
+                                                    >{{ departmentList[2].name}}</span
                                                 >
                                             </div>
                                         </div>
@@ -233,14 +231,13 @@
                                                 />
                                             </div>
                                             <div
-                                                class="schools-part-title-info"
+                                                class="schools-part-title-info" v-if="departmentList.length>2"
                                             >
-                                                {{departmentList && departmentList[2].name}}
+                                                {{departmentList[2].name}}
                                             </div>
-                                            <div>
-                                                <span class="introduce-Info">
-                                                    {{departmentList && departmentList[2].summaryEditor}}
-                                                </span>
+                                            <div class="introduce-Info" v-if="departmentList.length>2" v-html="departmentList[2].summaryEditor">
+                                                <!-- <span class="introduce-Info" v-html="departmentList[2].summaryEditor">
+                                                </span> -->
                                             </div>
                                             <div class="center-btn">
                                                 <div
@@ -491,79 +488,80 @@ export default {
             ],
             //学部介绍
             departmentList:[
-                {
-                    id:1,
-                    name:'幼儿园',
-                    editDate:'编辑时间',
-                    summaryEditor:'编辑时间概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
-                    contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                },
-                {
-                    id:2,
-                    name:'小学初中部',
-                    editDate:'编辑时间',
-                    summaryEditor:'小学初中部门概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
-                    contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                },
-                {
-                    id:3,
-                    name:'高中部',
-                    editDate:'编辑时间',
-                    summaryEditor:'高中部概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
-                    contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                }
+                // {
+                //     id:1,
+                //     name:'幼儿园',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'编辑时间概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
+                //     contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // },
+                // {
+                //     id:2,
+                //     name:'小学初中部',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'小学初中部门概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
+                //     contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // },
+                // {
+                //     id:3,
+                //     name:'高中部',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'高中部概要编辑概要编辑概要编辑概要编辑概要编辑概要编辑',
+                //     contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // }
             ],
             // 教育资源及合作伙伴
             resourceList: [
-                {
-                    id: 1,
-                    title: "Francis",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 2,
-                    title: "Francis Parker School",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 3,
-                    title: "德威英国",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 4,
-                    title: "Francis",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 5,
-                    title: "Francis Parker School",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
-                {
-                    id: 6,
-                    title: "德威英国",
-                    link: "https://www.francisparker.org/page",
-                    logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
-                    editDate: "2021-01-11 12:00:21",
-                },
+                // {
+                //     id: 1,
+                //     title: "Francis",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 2,
+                //     title: "Francis Parker School",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 3,
+                //     title: "德威英国",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 4,
+                //     title: "Francis",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 5,
+                //     title: "Francis Parker School",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
+                // {
+                //     id: 6,
+                //     title: "德威英国",
+                //     link: "https://www.francisparker.org/page",
+                //     logoUrl: "http://www.jschool.org.cn/img/images/FPS%20Logo-index.png",
+                //     editDate: "2021-01-11 12:00:21",
+                // },
             ], 
         };
     },
     mounted() {
-        this.initSwiper()
-        this.getSwiperList()
+        // this.getSwiperList()
         this.getDepartmentList()
+        this.getList()
+        this.initSwiper()
        
     
     },
@@ -604,9 +602,8 @@ export default {
             this.$http.get("/qishun/deployServer/homePageList", params, this)
                 .then((res) => {
                     if (0 === res.code) {
-                        if (0 === res.result) {
-                            this.swiperList = res.result.list;
-                        }
+                        this.swiperList = res.result.list;
+                        
                     } else {
                         // this.$message.error(res.resultMessage);
                     }

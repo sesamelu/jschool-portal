@@ -22,8 +22,9 @@
                     </div>
                 </div>
                 <div class="word-part word-part-new">
-                    <span class="words-content"
-                        >界首齐舜学校由幼儿园、小学部、初中部、高中部组成。学校对各学部集中、统一管理，以确保学生安全和教学质量。齐舜办学团队以学生为中心的理念将一以贯之地落实在每个学部和每位学生身上。在知识学习方面,学校将实施采用集中化的教学信息系统，该系统利用人工智能技术和大数据,帮助老师从出卷、阅卷等重复性机械劳动中解放出来，从而有更多的时间用于教研和教学;同时,该信息系统可以准确地测试、记录及预测每一位学生的知识掌握状况.帮助学生实现个性化、更高效地学习。</span
+                    <span class="words-content" v-html="content">
+                        <!-- 界首齐舜学校由幼儿园、小学部、初中部、高中部组成。学校对各学部集中、统一管理，以确保学生安全和教学质量。齐舜办学团队以学生为中心的理念将一以贯之地落实在每个学部和每位学生身上。在知识学习方面,学校将实施采用集中化的教学信息系统，该系统利用人工智能技术和大数据,帮助老师从出卷、阅卷等重复性机械劳动中解放出来，从而有更多的时间用于教研和教学;同时,该信息系统可以准确地测试、记录及预测每一位学生的知识掌握状况.帮助学生实现个性化、更高效地学习。 -->
+                        </span
                     >
                 </div>
             </div>
@@ -76,10 +77,10 @@
                                     <div class="schools-part-title-info">
                                         {{departmentList && departmentList[0].name}}
                                     </div>
-                                    <div>
-                                        <span class="introduce-Info">
+                                    <div class="introduce-Info" v-html="departmentList[0].summaryEditor">
+                                        <!-- <span class="introduce-Info">
                                             {{departmentList && departmentList[0].summaryEditor}}
-                                        </span>
+                                        </span> -->
                                     </div>
                                     <div class="more-info-button">了解更多</div>
                                 </div>
@@ -135,10 +136,10 @@
                                     <div class="schools-part-title-info">
                                         {{departmentList && departmentList[1].name}}
                                     </div>
-                                    <div>
-                                        <span class="introduce-Info">
+                                    <div class="introduce-Info" v-html="departmentList[1].summaryEditor">
+                                        <!-- <span class="introduce-Info">
                                             {{departmentList && departmentList[1].summaryEditor}}
-                                        </span>
+                                        </span> -->
                                     </div>
                                     <div class="center-btn">
                                         <div class="more-info-button">
@@ -198,10 +199,10 @@
                                     <div class="schools-part-title-info">
                                         {{departmentList && departmentList[2].name}}
                                     </div>
-                                    <div>
-                                        <span class="introduce-Info">
+                                    <div class="introduce-Info" v-html="departmentList[2].summaryEditor">
+                                        <!-- <span class="introduce-Info">
                                             {{departmentList && departmentList[2].summaryEditor}}
-                                        </span>
+                                        </span> -->
                                     </div>
                                     <div class="center-btn">
                                         <div class="more-info-button" href="">
@@ -221,6 +222,7 @@
 export default {
     data() {
         return {
+            content:"",
             //学部介绍
             departmentList:[
                 {
@@ -248,9 +250,27 @@ export default {
         };
     },
     mounted() {
+        this.getContent()
         this.getDepartmentList()
     },
     methods: {
+         getContent() {
+            let params = {
+                type: 'schools',
+            };
+            this.$http
+                .get("/qishun/deployServer/nonListInfo", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.content = res.result.info.content;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取数据失败");
+                });
+        },
         //获取学部介绍列表数据
         getDepartmentList(){
             let params = {

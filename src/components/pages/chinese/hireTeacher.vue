@@ -32,7 +32,9 @@
                 </div>
             </div>
             <div class="kindergarten-info-title" style="width: auto">
-                <div class="info-word">
+                <div class="info-word" v-html="content">
+                </div>
+                <!-- <div class="info-word">
                     因学校教学需要，现面向全国诚邀高中部、初中部和小学部优秀教师加入，共创一所理念先进、过程高效、内容全面、形式丰富、结果出色的高水平学校。具体事项公告如下：
                 </div>
                 <div class="info-word" style="height: 24px"></div>
@@ -86,17 +88,17 @@
                         style="color: #0066cc"
                         >hr@inqishun.com</span
                     >。
-                </div>
+                </div> -->
                 <div class="info-word" style="height: 24px"></div>
                 <div class="info-word">附件下载：</div>
                 <div class="info-word" style="height: 24px"></div>
-                <div class="info-word">
+                <div class="info-word" v-if="fileName">
                     <a
                         class="download"
-                        href="@assets/img/word/2018年在职教师招聘报名表.docx"
+                        :href="fileLink"
                     >
                         <img src="@assets/img/icon/download.png" alt="下载" /><span
-                            >&nbsp;2018年在职教师招聘报名表</span
+                            >&nbsp;{{fileName}}</span
                         >
                     </a>
                 </div>
@@ -109,13 +111,37 @@
 export default {
     data(){
         return {
-
+            content:'',
+            fileId:'',
+            fileName:'2018年在职教师招聘报名表',
+            fileLink:'http://www.jschool.org.cn:10002/qishun/fileManageService/downloads?fileIds=e582bbd5-cba8-43d5-a38f-504c5e002595.docx'
         }
     },
     mounted(){
+        this.getContent()
 
     },
     methods:{
+        getContent() {
+            let params = {
+                type: 'hireTeacher',
+            };
+            this.$http
+                .get("/qishun/deployServer/nonListInfo", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.content = res.result.info.content;
+                        this.fileId =  res.result.info.fileId;
+                        this.fileName = res.result.info.fileName;
+                        this.fileLink =  res.result.info.fileLink;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取数据失败");
+                });
+        },
 
     }
 }

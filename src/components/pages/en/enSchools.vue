@@ -19,8 +19,8 @@
                     </div>
                 </div>
                 <div class="word-part">
-                    <span class="words-content">
-                        In J. School, we offer Kindergarten education (age 3-6),
+                    <span class="words-content" v-html="content">
+                        <!-- In J. School, we offer Kindergarten education (age 3-6),
                         Primary School (age 7-12), Middle School (age 13-15),
                         and high school (age 16-18) education. J. School has
                         three separate but close-by campuses located in Yingnan
@@ -30,7 +30,7 @@
                         dedicated to implement up-to-the-minute technology such
                         as artificial intelligence, deep learning and etc. to
                         boost teaching and learning efficiency of teachers and
-                        students.
+                        students. -->
                     </span>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                                         <div>
                                             <span class="Underline-bar"></span>
                                         </div>
-                                        <span class="schools-part-title"
-                                            >{{departmentList && departmentList[0].name}}
+                                        <span class="schools-part-title" v-if="departmentList.length>0"
+                                            >{{departmentList[0].name}}
                                         </span>
                                     </div>
                                 </div>
@@ -80,13 +80,11 @@
                                             class="schools-icon-info"
                                         />
                                     </div>
-                                    <div class="schools-part-title-info">
-                                        {{departmentList && departmentList[0].name}}
+                                    <div class="schools-part-title-info" v-if="departmentList.length>0">
+                                        {{departmentList[0].name}}
                                     </div>
-                                    <div>
-                                        <span class="introduce-Info">
-                                           {{departmentList && departmentList[0].summaryEditor}}
-                                        </span>
+                                    <div class="introduce-Info"  v-if="departmentList.length>0" v-html="departmentList[0].summaryEditor">
+
                                     </div>
                                     <div class="more-info-button">More</div>
                                 </div>
@@ -126,8 +124,8 @@
                                         <div>
                                             <span class="Underline-bar"></span>
                                         </div>
-                                        <span class="schools-part-title"
-                                            >{{departmentList && departmentList[1].name}}</span
+                                        <span class="schools-part-title" v-if="departmentList.length>1"
+                                            >{{departmentList[1].name}}</span
                                         >
                                     </div>
                                 </div>
@@ -139,13 +137,10 @@
                                             class="schools-icon-info"
                                         />
                                     </div>
-                                    <div class="schools-part-title-info">
-                                        {{departmentList && departmentList[1].name}}
+                                    <div class="schools-part-title-info" v-if="departmentList.length>1">
+                                        {{departmentList[1].name}}
                                     </div>
-                                    <div>
-                                        <span class="introduce-Info">
-                                            {{departmentList && departmentList[1].summaryEditor}}
-                                        </span>
+                                    <div class="introduce-Info" v-if="departmentList.length>1" v-html="departmentList[1].summaryEditor">
                                     </div>
                                     <div class="center-btn">
                                         <div class="more-info-button">More</div>
@@ -187,8 +182,8 @@
                                         <div>
                                             <span class="Underline-bar"></span>
                                         </div>
-                                        <span class="schools-part-title"
-                                            >{{departmentList && departmentList[2].name}}</span
+                                        <span class="schools-part-title" v-if="departmentList.length>2"
+                                            >{{departmentList[2].name}}</span
                                         >
                                     </div>
                                 </div>
@@ -200,13 +195,10 @@
                                             class="schools-icon-info"
                                         />
                                     </div>
-                                    <div class="schools-part-title-info">
-                                        {{departmentList && departmentList[2].name}}
+                                    <div class="schools-part-title-info" v-if="departmentList.length>2">
+                                        {{departmentList[2].name}}
                                     </div>
-                                    <div>
-                                        <span class="introduce-Info">
-                                            {{departmentList && departmentList[2].summaryEditor}}
-                                        </span>
+                                    <div class="introduce-Info" v-if="departmentList.length>2" v-html="departmentList[2].summaryEditor">
                                     </div>
                                     <div class="center-btn">
                                         <div class="more-info-button" href="">
@@ -226,36 +218,55 @@
 export default {
     data() {
         return {
+            content:"",
             //学部介绍
             departmentList:[
-                {
-                    id:1,
-                    name:'Kindergarten',
-                    editDate:'编辑时间',
-                    summaryEditor:'KindergartenKindergartenKindergartenKindergartenKindergartenKindergarten',
-                    contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                },
-                {
-                    id:2,
-                    name:'Primary And Middle School',
-                    editDate:'编辑时间',
-                    summaryEditor:'Primary And Middle SchoolPrimary And Middle SchoolPrimary And Middle SchoolPrimary And Middle School',
-                    contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                },
-                {
-                    id:3,
-                    name:'High School',
-                    editDate:'编辑时间',
-                    summaryEditor:'High SchoolHigh SchoolHigh SchoolHigh SchoolHigh School',
-                    contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
-                }
+                // {
+                //     id:1,
+                //     name:'Kindergarten',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'KindergartenKindergartenKindergartenKindergartenKindergartenKindergarten',
+                //     contentEditor:'编辑时间正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // },
+                // {
+                //     id:2,
+                //     name:'Primary And Middle School',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'Primary And Middle SchoolPrimary And Middle SchoolPrimary And Middle SchoolPrimary And Middle School',
+                //     contentEditor:'小学初中部门正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // },
+                // {
+                //     id:3,
+                //     name:'High School',
+                //     editDate:'编辑时间',
+                //     summaryEditor:'High SchoolHigh SchoolHigh SchoolHigh SchoolHigh School',
+                //     contentEditor:'高中部正文正文正文正文正文正文正文正文正文正文正文正文正文'
+                // }
             ],
         };
     },
     mounted() {
+        this.getContent()
         this.getDepartmentList()
     },
     methods: {
+        getContent() {
+            let params = {
+                type: 'enSchools',
+            };
+            this.$http
+                .get("/qishun/deployServer/nonListInfo", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.content = res.result.info.content;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取数据失败");
+                });
+        },
         //获取学部介绍列表数据
         getDepartmentList(){
             let params = {
