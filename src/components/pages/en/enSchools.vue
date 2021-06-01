@@ -1,7 +1,32 @@
 <template>
     <div>
          <div class="schools-content">
-            <div class="top-section">
+              <div class="top-section top-section-new">
+                <div
+                    class="picture-part-wrapper picture-part-wrapper-new"
+                    style="text-align: right"
+                >
+                    <div
+                        class="ih-item square effect6 from_top_and_bottom square-picture"
+                        style=""
+                    >
+                        <a href="#">
+                            <div class="img">
+                                <img
+                                    class="picture-part"
+                                    src="@assets/img/images/img-schools.png"
+                                    alt="img"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="word-part word-part-new">
+                    <span class="words-content" v-html="content">
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="top-section">
                 <div class="picture-part-wrapper" style="text-align: right">
                     <div
                         class="ih-item square effect6 from_top_and_bottom square-picture"
@@ -20,7 +45,7 @@
                 </div>
                 <div class="word-part">
                     <span class="words-content" v-html="content">
-                        <!-- In J. School, we offer Kindergarten education (age 3-6),
+                        In J. School, we offer Kindergarten education (age 3-6),
                         Primary School (age 7-12), Middle School (age 13-15),
                         and high school (age 16-18) education. J. School has
                         three separate but close-by campuses located in Yingnan
@@ -30,10 +55,10 @@
                         dedicated to implement up-to-the-minute technology such
                         as artificial intelligence, deep learning and etc. to
                         boost teaching and learning efficiency of teachers and
-                        students. -->
+                        students.
                     </span>
                 </div>
-            </div>
+            </div> -->
             <div class="schools-part en-new">
                 <div class="schools-part-item">
                     <div
@@ -83,8 +108,10 @@
                                     <div class="schools-part-title-info" v-if="departmentList.length>0">
                                         {{departmentList[0].name}}
                                     </div>
-                                    <div class="introduce-Info"  v-if="departmentList.length>0" v-html="departmentList[0].summaryEditor">
-
+                                    <div class="introduce-Info"  v-if="departmentList.length>0">
+                                        <span>
+                                            {{departmentList[0].summaryEditor}}
+                                        </span>
                                     </div>
                                     <div class="more-info-button">More</div>
                                 </div>
@@ -140,7 +167,10 @@
                                     <div class="schools-part-title-info" v-if="departmentList.length>1">
                                         {{departmentList[1].name}}
                                     </div>
-                                    <div class="introduce-Info" v-if="departmentList.length>1" v-html="departmentList[1].summaryEditor">
+                                    <div class="introduce-Info" v-if="departmentList.length>1">
+                                        <span>
+                                            {{departmentList[1].summaryEditor}}
+                                        </span>
                                     </div>
                                     <div class="center-btn">
                                         <div class="more-info-button">More</div>
@@ -198,7 +228,10 @@
                                     <div class="schools-part-title-info" v-if="departmentList.length>2">
                                         {{departmentList[2].name}}
                                     </div>
-                                    <div class="introduce-Info" v-if="departmentList.length>2" v-html="departmentList[2].summaryEditor">
+                                    <div class="introduce-Info" v-if="departmentList.length>2">
+                                        <span>
+                                            {{departmentList[2].summaryEditor}}
+                                        </span>
                                     </div>
                                     <div class="center-btn">
                                         <div class="more-info-button" href="">

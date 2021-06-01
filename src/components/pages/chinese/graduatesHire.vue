@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="kindergarten-info-title" style="width: auto">
+                <div class="kindergarten-info-title" style="width:100%">
                     <div class="info-word" v-html="content">
                     </div>
                     <!-- <div class="info-word">
@@ -148,8 +148,10 @@
                         >，在邮件主题注明“应届生招聘咨询”，或联系咨询电话：173-0968-8426。
                     </div> -->
                     <div class="info-word" style="height: 24px"></div>
+                    <div class="red-line"></div>
+                    <div class="info-word" style="height: 12px"></div>
                     <div class="info-word">附件下载：</div>
-                    <div class="info-word" style="height: 24px"></div>
+                    <div class="info-word" style="height: 12px"></div>
                     <div class="info-word" v-if="fileName">
                         <a
                             class="download"
@@ -207,7 +209,12 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
+.red-line{
+    width:100%;
+    height: 2px;
+    background: #B6212D;
+    margin-left: 2em;
+}
 </style>
 <style lang="scss">
 

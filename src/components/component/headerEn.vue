@@ -11,16 +11,24 @@
                     /></a>
                 </div>
                 <div class="school-name-img">
-                    <a class="lg-word-logo" style="cursor:pointer;" @click="goIndex"
+                    <!-- <a class="lg-word-logo" style="cursor:pointer;" @click="goIndex"
                         ><img
                             src="@assets/img/images/img-logo-t.png"
                             alt="齐舜学校·界首"
-                    /></a>
+                    /></a> -->
+                    <div style="cursor:pointer;" @click="goIndex" class="school-log-left-svg-wrapper">
+                        <svg class="icon iconlogo_zuhe school-log-left-svg" aria-hidden="true" >;
+                            <use xlink:href="#iconlogo_zuhe"></use>
+                        </svg>
+                    </div>
                 </div>
                 <div class="school-log" style="cursor:pointer;" @click="goIndex">
-                    <a
+                    <!-- <a
                         ><img src="@assets/img/images/img-logo.png" alt="图片"
-                    /></a>
+                    /></a> -->
+                    <svg class="icon iconlogo_image school-log-right-svg" aria-hidden="true" >;
+                        <use xlink:href="#iconlogo_image"></use>
+                    </svg>
                 </div>
                 <div class="school-home">
                     <a @click="goChPage()"
@@ -207,6 +215,20 @@ export default {
 <style scoped lang="scss">
 .pg-header-en {
     position: relative;
+    .school-log-right-svg{
+        width: 71px;
+        height:71px;
+    }
+    .school-log-left-svg-wrapper{
+        width:352px;
+        height: 52px;
+        overflow: hidden;
+    }
+    .school-log-left-svg{
+        transform:scale(2.1);
+        margin-top: -14%;
+        margin-left: 2%;
+    }
     /* pc端 nav */
     .nav-wrapper-lg-ch {
         height: 50px;
@@ -331,6 +353,19 @@ export default {
 }
 // 隐藏pc端nav
 @media screen and (max-width: 1100px) {
+    .pg-header-en .school-log-right-svg{
+        width: 40px;
+        height:40px;
+    }
+    .pg-header-en .school-log-left-svg-wrapper{
+        width:146px;
+        height: 28px;
+    }
+    .pg-header-en .school-log-left-svg{
+        transform:scale(0.8);
+        margin-top: -42%;
+        margin-left: -52%;
+    }
     .pg-header-en .nav-wrapper-lg-ch {
         display: none;
     }

@@ -1,26 +1,43 @@
 <template>
     <div class="pg-news">
         <div class="schools-content">
-            <div class="index-first index-first-new ">
+            <div class="index-first index-first-new " v-if="topList && topList.length>0">
                 <div class="index-picture-part-wrapper">
                     <div
                         class="ih-item square effect6 from_top_and_bottom square-picture"
                     >
-                        <a href="#">
-                            <div class="img">
+                        <!-- <a href="#"> -->
+                            <div class="top-img">
                                 <img
-                                    src="@assets/img/images/index1.png"
+                                    :src="topList[0].imgUrl"
                                     alt="img"
                                 />
+                                <span class="play-icon" v-if="topList[0].type === '2'" @click="goDetail(topList[0].id)">
+                                    <img
+                                        src="@assets/img/icon/play-icon.png"
+                                        style="width: 100%"
+                                    />
+                                </span>
                             </div>
-                        </a>
+                            <!-- <div class="img" v-if="topList[0].type === '1'">
+                                <img
+                                    :src="topList[0].imgUrl"
+                                    alt="img"
+                                />
+                            </div> -->
+                            <!-- <div style="text-align:center;" v-else>
+                                <video width="94%" height="94%" controls="controls" autoplay="autoplay">
+                                    <source :src="topList[0].videoUrl" type="video/mp4" />
+                                </video>
+                            </div> -->
+                        <!-- </a> -->
                     </div>
                 </div>
                 <div class="index-word-part index-word-location index-new">
                     <span class="index-words-content"
-                        >从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复</span
+                        >{{topList[0].title}}</span
                     >
-                    <span class="learn-more">
+                    <span class="learn-more" @click="goDetail(topList[0].id)">
                         了解更多
                     </span>
                 </div>
@@ -34,29 +51,39 @@
                 :key="item.id"
                 >
                     <div class="thumbnail" @click="goDetail(item.id)">
-                        <div class="img-wrapper">
+                        <div class="img-wrapper" v-if="item.imgUrl" >
                             <img
-                                :src="item.img"
-                                style="width: 100%"
+                                :src="item.imgUrl"
+                                style="width: 100%;height:100%;object-fit:cover;"
                             />
-                            <span class="play-icon" v-if="item.type === 2">
+                            <span class="play-icon" v-if="item.type === '2'">
                                 <img
                                     src="@assets/img/icon/play-icon.png"
                                     style="width: 80%"
                                 />
                             </span>
                         </div>
+                        <div class="img-wrapper" v-else>
+                            <img
+                                src="@assets/img/images/news-list-default.png"
+                                style="width: 100%;height:100%;object-fit:cover;"
+                            />
+                        </div>
                         <div class="caption">
                             <div class="news-title">{{item.title}}</div>
-                            <div class="news-date">{{item.editDate}}</div>
+                            <div class="news-date">
+                                <i class="iconfont iconrili"></i>
+                                {{item.editDate}}</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="more-wrapper">
-                <div class="expand" @click="expandMore">
-                    <span>展开更多</span>
-                    →
+                <div class="expand" @click="expandMore" v-show="!isEnd">
+                    <span>展开更多
+                        <i class="iconfont iconicon_xiangxia"></i>
+                    </span>
+                    
                 </div>
             </div>
         </div>
@@ -66,65 +93,69 @@
 export default {
     data() {
         return {
-            newsList:[
-                {
-                    id:1,
-                    type:1,//1是图片，2是视频
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },
-                {
-                    id:2,
-                    type:2,
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },
-                {
-                    id:3,
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },
-                {
-                    id:4,
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },
-                {
-                    id:5,
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },
-                {
-                    id:6,
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },
-            ]
+            topList:[
+            ],
+            newsList:[],
+            isEnd:true,
+            // expandFlag:false
+            pageNumber:1
         };
     },
-    mounted() {},
+    mounted() {
+        this.getTop()
+        this.getList()
+    },
     methods: {
+        getTop(){
+            let params = {
+                type: 'ch',
+                isTop: 1, //1-是，0-否，不传-返回所有
+                pageSize:1,
+                pageNumber: 1
+            };
+            this.$http
+            .get("/qishun/deployServer/newsList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.topList = res.result.list;
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+
+        },
+        getList(){
+            let params = {
+                type: 'ch',
+                isTop: 0, //1-是，0-否，不传-返回所有
+                pageSize:6,
+                pageNumber: this.pageNumber
+            };
+            this.$http
+            .get("/qishun/deployServer/newsList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.newsList.push(...res.result.list)
+                    this.isEnd = res.result.isEnd;
+                    console.log(this.isEnd)
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
         //展开更多
         expandMore(){
             //判断是否还有可展开的内容，如果有把数据push进list，如果没有隐藏按钮
-            this.newsList.push({
-                    id:7,
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },
-                {
-                    id:8,
-                    title:'最多展示两行超出用省略号展示的是佛教的护法，的机会翻江倒海积分兑换附件',
-                    editDate:'2020-03-30',
-                    img:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
-                },)
+            if(!this.isEnd){
+                this.pageNumber++;
+                this.getList()
+            }
         },
         //跳转到详情页
         goDetail(id){
@@ -142,6 +173,20 @@ export default {
 /* 超小屏幕（手机，小于 768px） */
 /* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
 .pg-news {
+    .top-img{
+        height: 200px;
+        position: relative;
+        .play-icon{
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-40%, -50%);
+        }
+
+    }
     //头条
     .index-words-content{
         width: 86%;
@@ -165,6 +210,7 @@ export default {
     }
     .pg-news-wrapper {
         padding: 0 3%;
+        margin-top: 40px;
         .thumbnail{
             cursor: pointer;
             .caption{
@@ -172,7 +218,8 @@ export default {
                 .news-title{
                     font-size: 16px;
                     color:#1C305C;
-                    line-height: 26px;
+                    line-height: 24px;
+                    height:48px;
                     font-family: Microsoft YaHei;
                     font-weight: 400;
                      text-overflow: -o-ellipsis-lastline;
@@ -213,6 +260,13 @@ export default {
 /* 小屏幕（平板，大于等于 768px） */
 @media (min-width: 768px) {
     .pg-news {
+        .top-img{
+            height: 500px;
+            .play-icon{
+                width: 60px;
+                height: 60px;
+            }
+        }
         .pg-news-wrapper {
             padding: 0 3%;
             .thumbnail{
@@ -233,6 +287,13 @@ export default {
 /* 中等屏幕（桌面显示器，大于等于 992px） */
 @media (min-width: 992px) {
     .pg-news {
+        .top-img{
+            height: 600px;
+            .play-icon{
+                width: 60px;
+                height: 60px;
+            }
+        }
         .pg-news-wrapper {
             padding: 0 5%;
             .thumbnail{
@@ -253,6 +314,13 @@ export default {
 /* 大屏幕（大桌面显示器，大于等于 1200px） */
 @media (min-width: 1200px) {
     .pg-news {
+        .top-img{
+            height: 600px;
+            .play-icon{
+                width: 80px;
+                height: 80px;
+            }
+        }
         .pg-news-wrapper {
             padding: 0 14%;
             .thumbnail{
@@ -282,6 +350,7 @@ export default {
         border-radius: 8px;
         .img-wrapper{
             position: relative;
+            height: 236px;
             .play-icon{
                 position: absolute;
                 left:50%;

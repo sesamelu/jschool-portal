@@ -2,7 +2,7 @@
     <div class="pg-index-en">
         <article class="content">
             <div class="schools-content">
-                <div class="swiper-container">
+                <div class="swiper-container" v-if="swiperList && swiperList.length>0">
                     <div class="left-mask">
                     </div>
                     <div class="right-mask">
@@ -16,10 +16,11 @@
                                     class="ih-item square effect6 from_top_and_bottom square-picture"
                                 >
                                     <!-- <a href="#"> -->
-                                        <div class="img">
+                                        <div class="swiper-img">
                                             <img
                                                 :src="item.imgLink"
                                                 alt="img"
+                                                style="width:100%;object-fit:cover;"
                                             />
                                         </div>
                                     <!-- </a> -->
@@ -35,7 +36,7 @@
                     <div class="swiper-button-prev swiper-button-white"></div>
                     <div class="swiper-button-next swiper-button-white"></div>
                 </div>
-                <div class="swiper-pagination-wrapper">
+                <div class="swiper-pagination-wrapper" v-if="swiperList && swiperList.length>0">
                     <div class="swiper-pagination"></div>
                 </div>
                 <div class="schools">
@@ -98,8 +99,8 @@
                                             >
                                                 {{departmentList[0].name}}
                                             </div>
-                                            <div>
-                                                <span class="introduce-Info" v-if="departmentList.length>0">
+                                            <div class="introduce-Info"  v-if="departmentList.length>0">
+                                                <span >
                                                     {{departmentList[0].summaryEditor}}
                                                 </span>
                                             </div>
@@ -167,8 +168,8 @@
                                             >
                                                 {{departmentList[1].name}}
                                             </div>
-                                            <div>
-                                                <span class="introduce-Info" v-if="departmentList.length>1">
+                                            <div  class="introduce-Info" v-if="departmentList.length>1">
+                                                <span >
                                                     {{departmentList[1].summaryEditor}}
                                                 </span>
                                             </div>
@@ -239,8 +240,8 @@
                                             >
                                                 {{departmentList[2].name}}
                                             </div>
-                                            <div>
-                                                <span class="introduce-Info" v-if="departmentList.length>2">
+                                            <div class="introduce-Info" v-if="departmentList.length>2">
+                                                <span >
                                                     {{departmentList[2].summaryEditor}}
                                                 </span>
                                             </div>
@@ -559,7 +560,7 @@ export default {
         this.getSwiperList()
         this.getDepartmentList()
         this.getList()
-        this.initSwiper()
+        // this.initSwiper()
          
     },
     methods: {
@@ -670,12 +671,19 @@ export default {
             window.open(link)
         }
     },
+    updated(){
+        this.initSwiper()
+
+    },
 
     components: {},
 };
 </script>
 <style scoped lang="scss">
 .pg-index-en{
+    .swiper-img{
+         height:600px;
+     }
     .swiper-container{
         // width: 90%;
         .left-mask{
@@ -727,10 +735,10 @@ export default {
         }
     }
     .swiper-button-prev{
-        left: 110px;
+        left: 9%;
     }
     .swiper-button-next{
-        right: 110px;
+        right: 9%;
     }
     
    
@@ -738,6 +746,9 @@ export default {
 }
 @media  screen and  (max-width:1200px){
     .pg-index-en {
+        .swiper-img{
+            height:300px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 60px;
@@ -752,6 +763,9 @@ export default {
 }
 @media  screen and  (max-width:800px){
     .pg-index-en {
+        .swiper-img{
+            height:240px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 48px;
@@ -771,6 +785,9 @@ export default {
 }
 @media  screen and  (max-width:550px){
     .pg-index-en {
+        .swiper-img{
+            height:200px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 36px;
@@ -790,6 +807,9 @@ export default {
 }
 @media  screen and  (max-width:420px){
     .pg-index-en {
+        .swiper-img{
+            height:200px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 36px;

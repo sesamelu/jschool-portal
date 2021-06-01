@@ -2,7 +2,7 @@
     <div class="pg-index-ch">
         <article class="content">
             <div class="schools-content">
-                <div class="swiper-container">
+                <div class="swiper-container" v-if="swiperList && swiperList.length>0">
                     <div class="left-mask">
                     </div>
                     <div class="right-mask">
@@ -17,10 +17,11 @@
                                     class="ih-item square effect6 from_top_and_bottom square-picture"
                                 >
                                     <!-- <a href="#"> -->
-                                        <div class="img">
+                                        <div class="swiper-img">
                                             <img
                                                 :src="item.imgLink"
                                                 alt="img"
+                                                style="width:100%;object-fit:cover;"
                                             />
                                         </div>
                                     <!-- </a> -->
@@ -36,7 +37,7 @@
                     <div class="swiper-button-prev swiper-button-white"></div>
                     <div class="swiper-button-next swiper-button-white"></div>
                 </div>
-                <div class="swiper-pagination-wrapper">
+                <div class="swiper-pagination-wrapper" v-if="swiperList && swiperList.length>0">
                     <div class="swiper-pagination"></div>
                 </div>
                 <div class="schools">
@@ -99,9 +100,10 @@
                                             >
                                                 {{departmentList[0].name}}
                                             </div>
-                                            <div class="introduce-Info" v-if="departmentList.length>0" v-html="departmentList[0].summaryEditor">
-                                                <!-- <span class="introduce-Info" v-html="departmentList[0].summaryEditor">
-                                                </span> -->
+                                            <div class="introduce-Info" v-if="departmentList.length>0" >
+                                                <span>
+                                                    {{departmentList[0].summaryEditor}}
+                                                </span>
                                             </div>
                                             <div class="more-info-button">
                                                 了解更多
@@ -166,9 +168,10 @@
                                             >
                                                 {{departmentList[1].name}}
                                             </div>
-                                            <div class="introduce-Info" v-if="departmentList.length>1" v-html="departmentList[1].summaryEditor">
-                                                <!-- <span class="introduce-Info" v-html="departmentList[1].summaryEditor">
-                                                </span> -->
+                                            <div class="introduce-Info" v-if="departmentList.length>1">
+                                                <span>
+                                                    {{departmentList[1].summaryEditor}}
+                                                </span>
                                             </div>
                                             <div class="center-btn">
                                                 <div class="more-info-button">
@@ -235,9 +238,10 @@
                                             >
                                                 {{departmentList[2].name}}
                                             </div>
-                                            <div class="introduce-Info" v-if="departmentList.length>2" v-html="departmentList[2].summaryEditor">
-                                                <!-- <span class="introduce-Info" v-html="departmentList[2].summaryEditor">
-                                                </span> -->
+                                            <div class="introduce-Info" v-if="departmentList.length>2">
+                                                <span >
+                                                    {{departmentList[2].summaryEditor}}
+                                                </span>
                                             </div>
                                             <div class="center-btn">
                                                 <div
@@ -455,36 +459,36 @@ export default {
     data() {
         return {
             swiperList:[
-                {
-                    id:1,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:2,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'随便写的',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:3,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'活动照片',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:4,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'随便写的',
-                    editDate:'2021-01-11 12:00:21',
-                },
-                {
-                    id:5,
-                    imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                    title:'随便写的',
-                    editDate:'2021-01-11 12:00:21',
-                },
+                // {
+                //     id:1,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:2,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:3,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'活动照片',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:4,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:5,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
             ],
             //学部介绍
             departmentList:[
@@ -558,10 +562,10 @@ export default {
         };
     },
     mounted() {
-        // this.getSwiperList()
+        this.getSwiperList()
         this.getDepartmentList()
         this.getList()
-        this.initSwiper()
+        // this.initSwiper()
        
     
     },
@@ -570,7 +574,7 @@ export default {
         initSwiper(){
             new Swiper ('.swiper-container', {
                 loop: true,
-                initialSlide :0,
+                // initialSlide :0,
                 spaceBetween: 20,
                 slidesPerView: 'auto',
                 centeredSlides: true,
@@ -678,6 +682,10 @@ export default {
         }
         
     },
+    updated(){
+        this.initSwiper()
+
+    },
 
     components: {},
 };
@@ -715,6 +723,9 @@ export default {
 </style>
 <style lang="scss">
  .pg-index-ch {
+     .swiper-img{
+         height:600px;
+     }
      .swiper-slide{
         width: 86%;
     }
@@ -735,10 +746,10 @@ export default {
         }
     }
     .swiper-button-prev{
-        left: 110px;
+        left: 10%;
     }
     .swiper-button-next{
-        right: 110px;
+        right: 10%
     }
     
    
@@ -746,6 +757,9 @@ export default {
 }
 @media  screen and  (max-width:1200px){
     .pg-index-ch {
+        .swiper-img{
+            height:300px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 60px;
@@ -760,6 +774,9 @@ export default {
 }
 @media  screen and  (max-width:800px){
     .pg-index-ch {
+        .swiper-img{
+            height:240px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 48px;
@@ -779,6 +796,9 @@ export default {
 }
 @media  screen and  (max-width:550px){
     .pg-index-ch {
+        .swiper-img{
+            height:200px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 36px;
@@ -798,6 +818,9 @@ export default {
 }
 @media  screen and  (max-width:420px){
     .pg-index-ch {
+        .swiper-img{
+            height:200px;
+        }
         .swiper-pagination{
             .swiper-pagination-bullet{
                 width: 36px;

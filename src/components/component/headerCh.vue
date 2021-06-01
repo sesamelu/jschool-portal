@@ -11,16 +11,25 @@
                     </a>
                 </div>
                 <div class="school-name-img">
-                    <a class="lg-word-logo" style="cursor:pointer;" @click="goIndex">
-                        <img
+                    <!-- <a class="lg-word-logo" style="cursor:pointer;" @click="goIndex"> -->
+                        <!-- <img
                             src="@assets/img/images/img-logo-t.png"
                             alt="齐舜学校·界首"
-                        />
-                    </a>
+                        /> -->
+                        <div style="cursor:pointer;" @click="goIndex" class="school-log-left-svg-wrapper">
+                            <svg class="icon iconlogo_zuhe school-log-left-svg" aria-hidden="true" >;
+                                <use xlink:href="#iconlogo_zuhe"></use>
+                            </svg>
+                        </div>
+                    <!-- </a> -->
                 </div>
                 <div class="school-log" style="cursor:pointer;" @click="goIndex">
-                    <a><img src="@assets/img/images/img-logo.png" alt="图片"
-                    /></a>
+                    <!-- <a> -->
+                        <svg class="icon iconlogo_image school-log-right-svg" aria-hidden="true" >;
+                            <use xlink:href="#iconlogo_image"></use>
+                        </svg>
+                        <!-- <img src="@assets/img/images/img-logo.png" alt="图片"/> -->
+                    <!-- </a> -->
                 </div>
                 <div class="school-home">
                     <a @click="goEnPage()"><span class="school-language">EN</span></a>
@@ -263,6 +272,20 @@ export default {
     .open-menu{
         cursor: pointer;
     }
+    .school-log-right-svg{
+        width: 78px;
+        height:78px;
+    }
+    .school-log-left-svg-wrapper{
+        width:352px;
+        height: 52px;
+        overflow: hidden;
+    }
+    .school-log-left-svg{
+        transform:scale(2.1);
+        margin-top: -14%;
+        margin-left: 2%;
+    }
     /* pc端 nav */
     .nav-wrapper-lg-ch {
         height: 50px;
@@ -384,6 +407,19 @@ export default {
 }
 // 隐藏pc端nav
 @media screen and (max-width: 1100px) {
+    .pg-header-ch .school-log-right-svg{
+        width: 38px;
+        height:38px;
+    }
+    .pg-header-ch .school-log-left-svg-wrapper{
+        width:146px;
+        height: 28px;
+    }
+    .pg-header-ch .school-log-left-svg{
+        transform:scale(0.8);
+        margin-top: -42%;
+        margin-left: -52%;
+    }
     .pg-header-ch  .nav-wrapper-lg-ch {
         display: none;
     }

@@ -54,8 +54,8 @@
                 </div>
             </div>
             <div class="two-col" style="width: 30%; margin-left: 50px">
-                <div class="title-word2" v-if="tenYearsList">{{ tenYearsList[0].name}}</div>
-                <div class="info-word top-distance" v-if="tenYearsList" v-html="tenYearsList[0].contentEditor">
+                <div class="title-word2" v-if="tenYearsList.length>0">{{ tenYearsList[0].name}}</div>
+                <div class="info-word top-distance" v-if="tenYearsList.length>0" v-html="tenYearsList[0].contentEditor">
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="two-col" style="width: 30%; margin-left: 50px">
-                <div class="title-word2" v-if="tenYearsList.length>2">{{tenYearsList[2].name}}</div>
+                <div class="title-word2" v-if="tenYearsList.length>1">{{tenYearsList[2].name}}</div>
                 <div class="info-word top-distance" v-if="tenYearsList.length>1" v-html="tenYearsList[2].contentEditor">
                 </div>
             </div>

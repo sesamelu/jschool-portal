@@ -1,7 +1,32 @@
 <template>
-    <div>
-         <div class="schools-content">
-            <div class="top-section">
+    <div class="pg-resource-en">
+        <div class="schools-content">
+            <div class="top-section top-section-new">
+                <div
+                    class="picture-part-wrapper picture-part-wrapper-new"
+                    style="text-align: right"
+                >
+                    <div
+                        class="ih-item square effect6 from_top_and_bottom square-picture"
+                        style=""
+                    >
+                        <a href="#">
+                            <div class="img">
+                                <img
+                                    class="picture-part"
+                                    src="@assets/img/images/schoolresource.png"
+                                    alt="img"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="word-part word-part-new">
+                    <span class="words-content" v-html="content"></span
+                    >
+                </div>
+            </div>
+            <!-- <div class="top-section">
                 <div class="picture-part-wrapper" style="text-align: right">
                     <div
                         class="ih-item square effect6 from_top_and_bottom square-picture"
@@ -20,136 +45,30 @@
                 </div>
                 <div class="word-part" style="top: 152px">
                     <div class="info-word">
-                        Qishun Education Group has accumulated abundant
-                        education resources and networks, including alumni from
-                        top universities in the world such as Harvard
-                        University, University of California Los Angeles,
-                        University of Pittsburgh, etc.; top public and
-                        independent schools in China; well-known international
-                        schools such as Dulwich College; top college preparatory
-                        schools in the United States; and exploratory new school
-                        such as T School.
+                        齐舜教育集团在过去的办学中积累了丰富的优质教育资源及合作伙伴，包括哈佛大学教育学院、上海外国语大学等国内外著名的大学；国内优质的公立、私立学校；德威英国国际学校等顶尖国际学校；Francis
+                        Parker School、La Jolla Country Day
+                        School等美国顶尖私立高中；T school等一系列创新学校等。
                     </div>
                 </div>
-            </div>
-            <div>
-                <div class="resources-content" style="text-align: center">
-                    <div class="borders">
-                        <div class="resource-top">
-                            <img
-                                src="@assets/img/images/deweilogo-index.png"
-                                alt=""
-                            />
-                        </div>
-                        <a href="https://shanghai-pudong.dulwich.org"
-                            ><span class="resource-link"
-                                >Dulwich College International
-                            </span></a
-                        >
-                        <div class="info-word resource-word">
-                            Dulwich College International is founded by British
-                            lawyer Fraser White and his wife Karen Yung,
-                            offering a challenging and ambitious education that
-                            would prepare their children for the future,
-                            moulding them into confident and well-rounded young
-                            people. Beyond academics, they wanted a school
-                            community with the open-mindedness and doughtiness
-                            bred of international experience, a strong
-                            co-curricular program and the grounding provided by
-                            venerable British educational traditions. The origin
-                            of Dulwich College International is Dulwich College
-                            in London founded by Elizabethan actor Edward
-                            Alleyn. Dating back to 1619, Dulwich College is one
-                            of the UK’s oldest independent schools, and it has a
-                            long history of academic excellence, innovation and
-                            respect for tradition.
-                        </div>
-                    </div>
-                    <div class="borders">
-                        <div class="resource-top">
-                            <img
-                                src="@assets/img/images/IEM-index.png"
-                                alt=""
-                            />
-                        </div>
-                        <a href="http://ieducationm.com"
-                            ><span class="resource-link">IEM</span></a
-                        >
-                        <div class="info-word resource-word">
-                            Founded in 2007, International Education Management
-                            (IEM) is an innovative partner in educational
-                            exchanges and study abroad programs here in
-                            California. IEM strives for students to not only
-                            succeed academically but become a global citizen by
-                            working closely together with partner institutions
-                            and host families.IEM is proud to make a difference
-                            in shaping the next leaders of the world by
-                            providing educational student exchanges and study
-                            abroad program in San Diego, California. Graduates
-                            and alumni of IEM have landed leadership roles with
-                            various organizations and/or have been accepted to
-                            top colleges and universities throughout the United
-                            States. All this is achieved by IEM’s commitment to
-                            students and the “village” of partnerships that we
-                            have built to ensure that they are equipped to
-                            succeed.
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="resources-content second-resource en"
-                    style="text-align: center"
-                >
-                    <div class="borders">
-                        <div class="resource-top">
-                            <img
-                                src="@assets/img/images/T School Logo-index.png"
-                                alt=""
-                            />
-                        </div>
-                        <a href="http://t.school"
-                            ><span class="resource-link">T school</span></a
-                        >
-                        <div class="info-word resource-word">
-                            T School is a newly established exploratory school
-                            opened in September 2018 in Beijing, China. The
-                            education in T school emphasizes the basic knowledge
-                            and skills in the development of human society. In T
-                            school, teachers mostly adopt pedagogy of
-                            ‘theme-focused leaning’, ‘project learning’,
-                            ‘mastery-directed learning’, and other advanced
-                            methodology. T school is a colorful spectrum where
-                            each child develops their own colors; is a warm
-                            haven where children grow merrily, joyfully, and
-                            healthfully, is a fertile land where children
-                            acquire knowledge and develop habits that will help
-                            them learn, excel, and shoulder responsibilities in
-                            the future, is a powerful aircraft engine In which
-                            children are given the freedom of choice and explore
-                            the unknown boundaries.
-                        </div>
-                    </div>
-                    <div class="borders">
-                        <div class="resource-top">
-                            <img
-                                src="@assets/img/images/onion-index.png"
-                                alt=""
-                            />
-                        </div>
-                        <a href="http://yangcong345.com/student.html"
-                            ><span class="resource-link">Onion Math</span></a
-                        >
-                        <div class="info-word resource-word">
-                            Onion Math is a Chinese online education startup,
-                            which brings its teaching resources to remote
-                            schools in rural China in a bid to improve the
-                            quality of education in poverty-stricken areas.
-                            Founded in late 2013 in Beijing, Onion Math provides
-                            online lessons to Chinese youth in primary and
-                            secondary schools. It creates interesting
-                            educational videos to explain complex mathematical
-                            theories and equations, and trains students to solve
-                            math problems through games.
+            </div> -->
+            <div class="add-resource-wrapper">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4"
+                    v-for="item in resourceList"
+                    :key="item.id"
+                    >
+                        <div class="add-resource-container">
+                            <div class="add-resource-img">
+                                <img
+                                    :src="item.logoUrl"
+                                    alt=""
+                                />
+                            </div>
+                            <div style="text-align:center;"><span class="resource-title"
+                                @click="goPage(item.link)">{{item.title}}</span
+                            ></div>
+                            <div class="add-resource-content" v-html="item.contentEditor">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -160,11 +79,141 @@
 <script>
 export default {
     data() {
-        return {};
+        return {
+            content:'',
+            resourceList:[
+                {
+                    id: 1,
+                    title: "Francis",
+                    link: "http://www.456.com",
+                    editDate: "2021-01-11 12:00:21",
+                    logoUrl:'http://www.jschool.org.cn/img/images/LJCDS%20Logo-index.png',
+                    contentEditor:'Francis Parker School (FPS)始建于1912年，有106年的历史，是一所全美高度认可的私立学校。学校致力于培养学生追求学术成就，实现自我价值和具有全球视野。学校被华尔街日报评为能为顶尖大学提供学生的最好的私立中学之一。2011年，CBS电视台把打款发货的技术开发多少积分付款的肌肤帕返回数据反馈行但是看见反函数棵艰苦大师傅艰苦大师傅觉得克学校评为美国西海岸最好的“常青藤大学预备学校”。学校的使命是在多元化社区中培养学业优异、具有全球视野、意志坚强及独立思考的学生，帮助他们为世界发展做出有意义的贡献。学校致力于培养学生追求学术成就，实现自我价值和具有全球视野。学校被华尔街日报评为能为顶尖大学提供学生的最好的私立中学之一。2011年，CBS电视台把打款发货的技术开发多少积分付款的肌肤帕返回数据反馈行但是看见反函数棵艰苦大师傅艰苦大师傅觉得克学校评为美国西海岸最好的“常青藤大学预备学校”。学校的使命是在多元化社区中培养学业优异、具有全球视野、意志坚强及独立思考的学生，帮助他们为世界发展做出有意义的贡献'
+                },
+                {
+                    id: 2,
+                    title: "La",
+                    link: "http://www.123.com",
+                    editDate: "2021-01-11 12:00:21",
+                    logoUrl:'http://www.jschool.org.cn/img/images/LJCDS%20Logo-index.png',
+                    contentEditor:'Francis Parker School (FPS)始建于1912年，有106年的历史，是一所全美高度认可的私立学校。学校致力于培养学生追求学术成就，实现自我价值和具有全球视野。学校被华尔街日报评为能为顶尖大学提供学生的最好的私立中学之一。2011年，CBS电视台把帕克学校评为美国西海岸最好的“常青藤大学预备学校”。学校的使命是在多元化社区中培养学业优异、具有全球视野、意志坚强及独立思考的学生，帮助他们为世界发展做出有意义的贡献。'
+                },
+                {
+                    id: 3,
+                    title: "德威英国",
+                    link: "http://www.789.com",
+                    editDate: "2021-01-11 12:00:21",
+                    logoUrl:'http://www.jschool.org.cn/img/images/LJCDS%20Logo-index.png',
+                    contentEditor:'Francis Parker School (FPS)始建于1912年，有106年的历史，是一所全美高度认可的私立学校。学校致力于培养学生追求学术成就，实现自我价值和具有全球视野。学校被华尔街日报评为能为顶尖大学提供学生的最好的私立中学之一。2011年，CBS电视台把帕克学校评为美国西海岸最好的“常青藤大学预备学校”。学校的使命是在多元化社区中培养学业优异、具有全球视野、意志坚强及独立思考的学生，帮助他们为世界发展做出有意义的贡献。'
+                },
+                {
+                    id: 4,
+                    title: "La",
+                    link: "http://www.123.com",
+                    editDate: "2021-01-11 12:00:21",
+                    logoUrl:'http://www.jschool.org.cn/img/images/LJCDS%20Logo-index.png',
+                    contentEditor:'Francis Parker School (FPS)始建于1912年，有106年的历史，是一所全美高度认可的私立学校。学校致力于培养学生追求学术成就，实现自我价值和具有全球视野。学校被华尔街日报评为能为顶尖大学提供学生的最好的私立中学之一。2011年，CBS电视台把帕克学校评为美国西海岸最好的“常青藤大学预备学校”。学校的使命是在多元化社区中培养学业优异、具有全球视野、意志坚强及独立思考的学生，帮助他们为世界发展做出有意义的贡献。'
+                },
+                {
+                    id: 5,
+                    title: "德威英国",
+                    link: "http://www.789.com",
+                    editDate: "2021-01-11 12:00:21",
+                    logoUrl:'http://www.jschool.org.cn/img/images/LJCDS%20Logo-index.png',
+                    contentEditor:'Francis Parker School (FPS)始建于1912年，有106年的历史，是一所全美高度认可的私立学校。学校致力于培养学生追求学术成就，实现自我价值和具有全球视野。学校被华尔街日报评为能为顶尖大学提供学生的最好的私立中学之一。2011年，CBS电视台把帕克学校评为美国西海岸最好的“常青藤大学预备学校”。学校的使命是在多元化社区中培养学业优异、具有全球视野、意志坚强及独立思考的学生，帮助他们为世界发展做出有意义的贡献。'
+                },
+            ]
+        };
     },
-    mounted() {},
-    methods: {},
+    mounted() {
+        this.getContent()
+        this.getList()
+    },
+    methods: {
+        getContent() {
+            let params = {
+                type: 'enOurNetwork',
+            };
+            this.$http
+                .get("/qishun/deployServer/nonListInfo", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.content = res.result.info.content;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取数据失败");
+                });
+        },
+        //获取列表数据
+        getList(){
+            let params = {
+                type: 'en',
+                pageSize: 1000,
+                pageNumber: 1
+            };
+            this.$http
+            .get("/qishun/deployServer/schoolResourceList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.resourceList = res.result.list;
+                    // this.total = res.result.total;
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
+        goPage(link){
+            window.open(link)
+        }
+
+    },
 };
 </script>
 <style scoped lang="scss">
+.pg-resource-en{
+    .add-resource-wrapper{
+        padding: 0 8% ;
+        .add-resource-container{
+            border: 1px solid #dddddd;
+             margin: 10px 0;
+             height:680px;
+            .add-resource-img{
+                height: 160px;
+                text-align: center;
+
+            }
+            .resource-title{
+                font-size: 24px;
+                color:#b6212d;
+                cursor: pointer;
+                text-align: center;
+                border-bottom:1px solid #b6212d
+
+            }
+            .add-resource-content{
+                padding: 0 20px;
+                margin-top:24px;
+                margin-bottom: 24px;
+                text-align: justify;
+                font-size: 16px;
+                line-height: 24px;
+                color: #333;
+                text-indent: 2em;
+                height: 430px;
+                overflow-x: hidden;
+
+            }
+            .add-resource-content::-webkit-scrollbar {display:none}
+
+        }
+
+    }
+
+}
 </style>

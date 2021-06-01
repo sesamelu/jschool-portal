@@ -28,7 +28,7 @@
         </div>
         <div class="schools-kindergarten">
             <div class="panel-group" id="accordion">
-                <div
+                <!-- <div
                     class="panel panel-default"
                     style="border-top: 1px solid #ddd"
                 >
@@ -138,38 +138,46 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="panel panel-default">
+                </div> -->
+                <div class="panel panel-default" 
+                v-for="item in careerList"
+                :key="item.id"
+                >
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a
                                 data-toggle="collapse"
                                 data-parent="#accordion"
-                                href="#collapseTwo"
-                                onclick="toggleCollapse('Two')"
+                                :href="`#${item.id}`"
+                                @click="toggleCollapse(item.id)"
                             >
-                                <div class="collapse-title Two">
-                                    <div class="collapse-word">
-                                        English Teacher (Intern: Kindergarten /
-                                        Primary / Middle School / High School)
+                                <div class="collapse-title">
+                                    <div class="collapse-word" :style="{'color':expandFlag === item.id?'#0066cc':'#1c305c'}">
+                                        {{item.name}}
+                                        <!-- English Teacher (Intern: Kindergarten /
+                                        Primary / Middle School / High School) -->
                                     </div>
                                     <div class="img-icon">
                                         <img
                                             class="collapse-icon"
                                             src="@assets/img/icon/icon-Collapse.png"
+                                            v-show="expandFlag != item.id"
                                         /><img
-                                            style="display: none"
                                             class="expand-icon"
                                             src="@assets/img/icon/icon-Expand.png"
+                                            v-show="expandFlag === item.id"
                                         />
                                     </div>
                                 </div>
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseTwo" class="panel-collapse collapse">
+                    <div :id="item.id" class="panel-collapse collapse"  v-show="expandFlag === item.id">
                         <div class="panel-body">
-                            <div class="info-word-title">We require:</div>
+                            <div class="info-word" v-html="item.contentEditor">
+                                
+                            </div>
+                            <!-- <div class="info-word-title">We require:</div>
                             <div class="info-word" style="height: 24px"></div>
                             <div class="text-indent-wrapper">
                                 <div class="info-word">
@@ -239,11 +247,11 @@
                                     family benefits (where applicable), meal
                                     allowance, etc.
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
+                <!-- <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a
@@ -700,10 +708,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="info-word" style="height: 24px"></div>
-            <div class="info-word">
+            <!-- 概要 -->
+            <div class="info-word" v-html="content">
+            </div>
+            <!-- <div class="info-word">
                 For detailed information about above positions or other job
                 opportunities, please contact Ms. Xiner Tong at
                 <span style="color: #0066cc">xiner.tong@inqishun.com</span>.
@@ -715,7 +726,7 @@
                 share this commitment. We follow safe recruitment practice and
                 appointments are subject to an interview, following-up
                 references with previous employers and criminal record checks.
-            </div>
+            </div> -->
         </div>
 
     </div>
@@ -724,13 +735,76 @@
 export default {
     data(){
         return {
+            content:'',
+            careerList:[
+                {
+                    id:1,
+                    name:'',
+                    contentEditor:''
+                }
+            ],
+            expandFlag:null
 
         }
     },
     mounted(){
+        this.getContent()
+        this.getList()
 
     },
     methods:{
+        getContent() {
+            let params = {
+                type: 'enCareers',
+            };
+            this.$http
+                .get("/qishun/deployServer/nonListInfo", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.content = res.result.info.content;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取数据失败");
+                });
+        },
+        getList(){
+            let params = {
+                pageSize: 1000,
+                pageNumber: 1
+            };
+            this.$http
+            .get("/qishun/deployServer/careersList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.careerList = res.result.list;
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
+        getListId(){
+            let idArr = [];
+            if(this.careerList.length>0){
+                this.careerList.forEach((item)=>{
+                    idArr.push(item.id)
+                })
+            }
+            return idArr;
+        },
+        toggleCollapse(id){
+            if (this.expandFlag == id){
+                this.expandFlag = null
+            } else {
+                this.expandFlag = id
+            }
+
+        }
 
     }
 }

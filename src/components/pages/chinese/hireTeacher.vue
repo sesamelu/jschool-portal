@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="kindergarten-info-title" style="width: auto">
+            <div class="kindergarten-info-title" style="width:100%">
                 <div class="info-word" v-html="content">
                 </div>
                 <!-- <div class="info-word">
@@ -90,8 +90,10 @@
                     >。
                 </div> -->
                 <div class="info-word" style="height: 24px"></div>
+                <div class="red-line"></div>
+                <div class="info-word" style="height: 12px"></div>
                 <div class="info-word">附件下载：</div>
-                <div class="info-word" style="height: 24px"></div>
+                <div class="info-word" style="height: 12px"></div>
                 <div class="info-word" v-if="fileName">
                     <a
                         class="download"
@@ -147,7 +149,12 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
+.red-line{
+    width:100%;
+    height: 2px;
+    background: #B6212D;
+    margin-left: 2em;
+}
 </style>
 <style lang="scss">
 

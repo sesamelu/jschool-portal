@@ -64,8 +64,10 @@
                                     alt=""
                                 />
                             </div>
-                            <div style="text-align:center;"><span class="resource-title"
-                                    >{{item.title}}</span
+                            <div style="text-align:center;">
+                                <span class="resource-title"
+                                @click="goPage(item.link)"
+                                >{{item.title}}</span
                             ></div>
                             <div class="add-resource-content" v-html="item.contentEditor">
                             </div>
@@ -154,11 +156,9 @@ export default {
                 pageSize: 1000,
                 pageNumber: 1
             };
-            this.tableLoading = true;
             this.$http
             .get("/qishun/deployServer/schoolResourceList", params, this)
             .then((res) => {
-                this.tableLoading = false;
                 if (0 === res.code) {
                     this.resourceList = res.result.list;
                     // this.total = res.result.total;
@@ -167,10 +167,12 @@ export default {
                 }
             })
             .catch((error) => {
-                this.tableLoading = false;
                 // this.$message.error("获取列表数据失败");
             });
         },
+        goPage(link){
+            window.open(link)
+        }
     },
 };
 </script>
