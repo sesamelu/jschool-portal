@@ -18,7 +18,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="word-part" style="top: 152px">
+                <div class="word-part summary-wrapper" style="top: 152px">
                     <div class="info-word" v-html="content">
                     </div>
                     <!-- <div class="info-word">

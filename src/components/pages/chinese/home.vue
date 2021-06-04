@@ -30,8 +30,14 @@ export default {
     },
 };
 </script>
-<style scoped lang="scss">
+<style  lang="scss">
 .pg-index-ch{
+    // 概要页面添加滚动条
+    .summary-wrapper{
+        max-height: 286px;
+        overflow-y: scroll;
+    }
+    .summary-wrapper::-webkit-scrollbar {display:none}
 
 }
 

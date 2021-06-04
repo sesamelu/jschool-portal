@@ -94,15 +94,20 @@
                 <div class="info-word" style="height: 12px"></div>
                 <div class="info-word">附件下载：</div>
                 <div class="info-word" style="height: 12px"></div>
-                <div class="info-word" v-if="fileName">
-                    <a
-                        class="download"
-                        :href="fileLink"
-                    >
-                        <img src="@assets/img/icon/download.png" alt="下载" /><span
-                            >&nbsp;{{fileName}}</span
+                <div v-if="fileList.length>0">
+                    <div class="info-word" 
+                        style="margin-bottom:14px;"
+                        v-for="(item) in fileList"
+                        :key="item.fileId">
+                        <a
+                            class="download"
+                            :href="item.fileLink"
                         >
-                    </a>
+                            <img src="@assets/img/icon/download.png" alt="下载" /><span
+                                >&nbsp;{{item.fileName}}</span
+                            >
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,9 +119,10 @@ export default {
     data(){
         return {
             content:'',
-            fileId:'',
-            fileName:'2018年在职教师招聘报名表',
-            fileLink:'http://www.jschool.org.cn:10002/qishun/fileManageService/downloads?fileIds=e582bbd5-cba8-43d5-a38f-504c5e002595.docx'
+            // fileId:'',
+            // fileName:'2018年在职教师招聘报名表',
+            // fileLink:'http://www.jschool.org.cn:10002/qishun/fileManageService/downloads?fileIds=e582bbd5-cba8-43d5-a38f-504c5e002595.docx'
+            fileList:[]
         }
     },
     mounted(){
@@ -133,9 +139,7 @@ export default {
                 .then((res) => {
                     if (0 === res.code) {
                         this.content = res.result.info.content;
-                        this.fileId =  res.result.info.fileId;
-                        this.fileName = res.result.info.fileName;
-                        this.fileLink =  res.result.info.fileLink;
+                        this.fileList = res.result.info.fileList;
                     } else {
                         // this.$message.error(res.resultMessage);
                     }

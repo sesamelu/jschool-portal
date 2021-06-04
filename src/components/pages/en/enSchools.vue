@@ -21,7 +21,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="word-part word-part-new">
+                <div class="word-part word-part-new summary-wrapper">
                     <span class="words-content" v-html="content">
                     </span>
                 </div>
