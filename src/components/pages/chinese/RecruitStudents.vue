@@ -37,23 +37,25 @@
                     界首齐舜学校将于2019年9月1日正式开学，招生工作将于2019年3月正式启动。2019学年，学校将招收幼儿园、小学、初中和高中学段的优秀学生。具体招生安排请关注学校微信“齐舜教育”见随后公告，也可联系学校招生电话17358925169咨询。
                 </div> -->
                 <div class="info-word" style="height: 24px"></div>
-                <div class="red-line"></div>
-                <div class="info-word" style="height: 12px"></div>
-                <div class="info-word">附件下载：</div>
-                <div class="info-word" style="height: 12px"></div>
                 <div v-if="fileList.length>0">
-                    <div class="info-word" 
-                        style="margin-bottom:14px;"
-                        v-for="(item) in fileList"
-                        :key="item.fileId">
-                        <a
-                            class="download"
-                            :href="item.fileLink"
-                        >
-                            <img src="@assets/img/icon/download.png" alt="下载" /><span
-                                >&nbsp;{{item.fileName}}</span
+                    <div class="red-line"></div>
+                    <div class="info-word" style="height: 12px"></div>
+                    <div class="info-word">附件下载：</div>
+                    <div class="info-word" style="height: 12px"></div>
+                    <div>
+                        <div class="info-word" 
+                            style="margin-bottom:14px;"
+                            v-for="(item) in fileList"
+                            :key="item.fileId">
+                            <a
+                                class="download"
+                                :href="item.fileLink"
                             >
-                        </a>
+                                <img src="@assets/img/icon/download.png" alt="下载" /><span
+                                    >&nbsp;{{item.fileName}}</span
+                                >
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

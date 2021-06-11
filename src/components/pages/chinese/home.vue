@@ -34,7 +34,7 @@ export default {
 .pg-index-ch{
     // 概要页面添加滚动条
     .summary-wrapper{
-        max-height: 286px;
+        max-height: 334px;
         overflow-y: scroll;
     }
     .summary-wrapper::-webkit-scrollbar {display:none}

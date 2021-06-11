@@ -586,10 +586,7 @@ export default {
                 // 如果需要滚动条
                 // scrollbar: '.swiper-scrollbar',
                 //如果需要自动切换海报
-                // autoplay: {
-                //   delay: 1000,//时间 毫秒
-                //   disableOnInteraction: false,//用户操作之后是否停止自动轮播默认true
-                // },
+                autoplay: 3000,
         })
         },
         //获取轮播图列表数据
@@ -679,7 +676,7 @@ export default {
     components: {},
 };
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .pg-index-en{
     .swiper-img{
          height:600px;

@@ -264,7 +264,7 @@ body {
     width:420px;
     height: 560px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
 
 }
 .schools-img-row{
@@ -303,7 +303,7 @@ body {
     font-weight: bold;
 
 }
-.en-new .school-nav-content. nav-pills > li.en-nav-2{
+.en-new .school-nav-content.nav-pills > li.en-nav-2{
     width:12%;
 }
 .en-new .school-nav-content .nav-pills > li.en-nav-3{
@@ -481,7 +481,8 @@ body {
 
 }
 .main-info .phone-address{
-    width: 69%;
+    /* width: 69%; */
+    width: 58%;
 
 }
 .main-info .wChart{
@@ -912,7 +913,15 @@ a.kindergarten-word-link {
     color: #333333;
 }
 
-.index-words-content {
+.pg-index-ch .index-words-content, .pg-index-en .index-words-content{
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    display: inline-block;
+    width: 100%;
+}
+.pg-news .index-words-content,.pg-news-en .index-words-content{
     font-size: 30px;
     line-height: 60px;
     font-weight: bold;
@@ -925,16 +934,19 @@ a.kindergarten-word-link {
 }
 
 .index-word-part {
-    text-shadow: 2px 2px 2px #333333;
+    /* text-shadow: 2px 2px 2px #333333; */
     padding: 20px 20px;
     display: inline-block;
     padding-left: 2%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .index-word-location {
     position: absolute;
     top: 82%;
     left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .index-picture-part-wrapper {
@@ -1216,7 +1228,7 @@ a.download:hover, a.download:focus {
 
 .collapse-title > .img-icon {
     display: inline-block;
-    width: 10%;
+    width: 8%;
     text-align: right;
 }
 
@@ -1317,7 +1329,7 @@ a.download:hover, a.download:focus {
     .index-word-location{
         top:80%;
     }
-    .index-words-content{
+    .pg-index-ch .index-words-content, .pg-index-en .index-words-content,pg-news .index-words-content,.pg-news-en .index-words-content{
         font-size:32px;
     }
     .schools-kindergarten-new{
@@ -1363,7 +1375,7 @@ width:90%;
     .index-word-part{
         padding:10px;
     }
-    .index-words-content{
+    .pg-index-ch .index-words-content, .pg-index-en .index-words-content,pg-news .index-words-content,.pg-news-en .index-words-content{
         line-height:28px;
     }
 }

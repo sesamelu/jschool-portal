@@ -385,7 +385,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="index-word-part right-word">
+                                <div class="index-word-part right-word" >
                                     <div>安全健康的食堂和舒适的宿舍</div>
                                     <div>保证孩子的身体成长和良好睡眠</div>
                                     <div>确保孩子身体好</div>
@@ -592,10 +592,8 @@ export default {
                 // 如果需要滚动条
                 // scrollbar: '.swiper-scrollbar',
                 //如果需要自动切换海报
-                // autoplay: {
-                //   delay: 1000,//时间 毫秒
-                //   disableOnInteraction: false,//用户操作之后是否停止自动轮播默认true
-                // },
+                autoplay: 3000,
+                
             })
         },
         //获取轮播图列表数据

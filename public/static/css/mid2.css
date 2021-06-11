@@ -21,7 +21,7 @@ body{
     width:30%;
 }
 
-.index-words-content{
+.pg-index-ch .index-words-content, .pg-index-en .index-words-content,pg-news .index-words-content,.pg-news-en .index-words-content{
     font-size:20px;
 }
 .index-word-location{

@@ -267,6 +267,11 @@ width:100%;
 .phone-address{
     padding-left:0;
 }
+.main-info .phone-address{
+    /* width: 69%; */
+    width: 90%;
+
+}
 .main-info > div{
     width:auto;
 }
@@ -284,8 +289,9 @@ width:100%;
 .index-word-location{
     top: 77%;
 }
-.index-words-content{
+.pg-index-ch .index-words-content, .pg-index-en .index-words-content,pg-news .index-words-content,.pg-news-en .index-words-content{
     font-size: 28px;
+    line-height: 34px;
 }
 
 .left-word, .right-word {

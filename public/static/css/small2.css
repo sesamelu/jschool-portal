@@ -27,7 +27,7 @@ body{
 .bottom-line{
     width:26%;
 }
-.index-words-content{
+.pg-index-ch .index-words-content, .pg-index-en .index-words-content,pg-news .index-words-content,.pg-news-en .index-words-content{
     font-size:14px;
 }
 .schools-part-title-info{
@@ -57,7 +57,7 @@ body{
 }
 
 @media  screen and (max-width: 325px) {
-    .index-words-content{
+    .pg-index-ch .index-words-content, .pg-index-en .index-words-content,pg-news .index-words-content,.pg-news-en .index-words-content{
         font-size:10px;
     }
     

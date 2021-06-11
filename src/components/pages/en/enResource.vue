@@ -62,6 +62,7 @@
                                 <img
                                     :src="item.logoUrl"
                                     alt=""
+                                    style="width:100%;height:100%;object-fit:contain;"
                                 />
                             </div>
                             <div style="text-align:center;"><span class="resource-title"
@@ -184,8 +185,9 @@ export default {
              margin: 10px 0;
              height:680px;
             .add-resource-img{
-                height: 160px;
+                height: 150px;
                 text-align: center;
+                margin-bottom: 10px;
 
             }
             .resource-title{

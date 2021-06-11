@@ -90,23 +90,25 @@
                     >。
                 </div> -->
                 <div class="info-word" style="height: 24px"></div>
-                <div class="red-line"></div>
-                <div class="info-word" style="height: 12px"></div>
-                <div class="info-word">附件下载：</div>
-                <div class="info-word" style="height: 12px"></div>
                 <div v-if="fileList.length>0">
-                    <div class="info-word" 
-                        style="margin-bottom:14px;"
-                        v-for="(item) in fileList"
-                        :key="item.fileId">
-                        <a
-                            class="download"
-                            :href="item.fileLink"
-                        >
-                            <img src="@assets/img/icon/download.png" alt="下载" /><span
-                                >&nbsp;{{item.fileName}}</span
+                    <div class="red-line"></div>
+                    <div class="info-word" style="height: 12px"></div>
+                    <div class="info-word">附件下载：</div>
+                    <div class="info-word" style="height: 12px"></div>
+                    <div>
+                        <div class="info-word" 
+                            style="margin-bottom:14px;"
+                            v-for="(item) in fileList"
+                            :key="item.fileId">
+                            <a
+                                class="download"
+                                :href="item.fileLink"
                             >
-                        </a>
+                                <img src="@assets/img/icon/download.png" alt="下载" /><span
+                                    >&nbsp;{{item.fileName}}</span
+                                >
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

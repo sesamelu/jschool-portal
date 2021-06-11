@@ -7,7 +7,10 @@
             <div class="school-top">
                 <div class="school-menu-img">
                     <a style="cursor:pointer" @click="clickMenu()">
-                        <img src="@assets/img/icon/icon-menu.png" alt="Menu" />
+                        <!-- <img src="@assets/img/icon/icon-menu.png" alt="Menu" /> -->
+                        <svg class="icon iconicon_liebiao-copy " aria-hidden="true" style="width: 24px;height:19px;">;
+                            <use xlink:href="#iconicon_liebiao-copy"></use>
+                        </svg>
                     </a>
                 </div>
                 <div class="school-name-img">
@@ -69,12 +72,17 @@
         </div>
         <div class="nav-wrapper-sm-wrapper" v-if="smMenuFlag">
             <div class="nav-sm-left">
-                <div class="nav-sm-close">
-                    <img
+                <div class="nav-sm-close"  @click="closeMenu()">
+                    <!-- <img
                         src="@assets/img/icon/icon-close.png"
                         @click="closeMenu()"
                         alt="关闭"
-                    />
+                    /> -->
+                    <span style="cursor:pointer;">
+                        <svg class="icon iconguanbi " aria-hidden="true" style="width: 26px;height:26px;">;
+                            <use xlink:href="#iconguanbi"></use>
+                        </svg>
+                    </span>
                 </div>
                 <div class="nav-sm-list">
                     <div

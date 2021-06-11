@@ -17,7 +17,7 @@
                                         </div>
                                         <div class="phone-item-word">
                                             <!-- &nbsp;+86&nbsp;173-0968-8426 -->
-                                            0558-4831369
+                                           Admission Office：0558-4831369
                                         </div>
                                     </div>
                                     <div class="phone-item">
@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="phone-item-word">
                                             <!-- &nbsp;+86&nbsp;558-483-1369 -->
-                                            0558-4810026
+                                            HR Office：0558-4810026
                                         </div>
                                     </div>
                                 </div>

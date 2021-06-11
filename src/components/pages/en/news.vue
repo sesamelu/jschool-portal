@@ -11,12 +11,16 @@
                                 <img
                                     :src="topList[0].imgUrl"
                                     alt="img"
+                                    style="object-fit:cover;"
                                 />
                                 <span class="play-icon" v-if="topList[0].type === '2'" @click="goDetail(topList[0].id)">
-                                    <img
+                                    <!-- <img
                                         src="@assets/img/icon/play-icon.png"
                                         style="width: 100%"
-                                    />
+                                    /> -->
+                                    <svg class="icon iconbofang " aria-hidden="true" style="width: 100%;height:100%;">;
+                                        <use xlink:href="#iconbofang"></use>
+                                    </svg>
                                 </span>
                             </div>
                             <!-- <div class="img" v-if="topList[0].type === '1'">
@@ -45,7 +49,7 @@
         </div>
         <div class="pg-news-wrapper">            
             <!-- 列表 -->
-            <div class="row">
+            <div class="row" style="margin-left:0;margin-right:0;">
                 <div class="col-xs-12 col-sm-6 col-md-4"
                 v-for="item in newsList"
                 :key="item.id"
@@ -57,10 +61,13 @@
                                 style="width: 100%;height:100%;object-fit:cover;"
                             />
                             <span class="play-icon" v-if="item.type === '2'">
-                                <img
+                                <!-- <img
                                     src="@assets/img/icon/play-icon.png"
                                     style="width: 80%"
-                                />
+                                /> -->
+                                <svg class="icon iconbofang " aria-hidden="true" style="width: 90%;height:90%;">;
+                                    <use xlink:href="#iconbofang"></use>
+                                </svg>
                             </span>
                         </div>
                         <div class="img-wrapper" v-else>
@@ -320,7 +327,7 @@ export default {
             }
         }
         .pg-news-wrapper {
-            padding: 0 14%;
+            padding: 0 12%;
             .thumbnail{
                 .caption{
                     padding: 10px 20px;
@@ -351,6 +358,8 @@ export default {
             height: 236px;
             .play-icon{
                 position: absolute;
+                width: 60px;
+                height: 60px;
                 left:50%;
                 top:50%;
                 transform: translate(-40%, -50%);

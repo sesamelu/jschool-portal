@@ -8,6 +8,7 @@
                 <span class="bread-title" @click="goList">新闻与活动</span>
                 <span class="gt-icon">&gt;</span>
                 <span class="bread-active">{{title}}</span>
+                <span class="bread-active-detail">详情</span>
             </div>
             <div class="news-title">
                 {{title}}
@@ -15,10 +16,10 @@
             <div class="news-date">
                 <i class="iconfont iconrili" style="margin-right:6px;"></i>{{editDate}}
             </div>
-            <div class="img-wrapper" v-if="type === '1'">
+            <!-- <div class="img-wrapper" v-if="type === '1'">
                 <img :src="imgUrl"/>
-            </div>
-            <div class="img-wrapper" style="text-align:center;" v-else>
+            </div> -->
+            <div class="img-wrapper" style="text-align:center;" v-if="type === '2'">
                 <video width="94%" height="94%" controls="controls" autoplay="autoplay">
                     <source :src="videoUrl" type="video/mp4" />
                 </video>
@@ -110,7 +111,12 @@ export default {
                 color: #1C305C;
             }
             .bread-active{
-                color: #1C305C
+                color: #1C305C;
+                 display: none;
+            }
+            .bread-active-detail{
+                color: #1C305C;
+                display: block;
             }
             .gt-icon{
                 margin: 0 10px;
@@ -119,14 +125,14 @@ export default {
         }
         //标题
         .news-title{
-            font-size: 36px;
+            font-size: 24px;
             color:#B6212D;
             font-weight: bold;
             text-align: center;
         }
         //日期
         .news-date{
-            font-size: 16px;
+            font-size: 14px;
             color: #1C305C;
             text-align: center;
             margin: 20px 0 20px 0;
@@ -156,6 +162,12 @@ export default {
             .news-bread{
                 font-size: 16px;
                 padding: 20px 0 20px 6%;
+                .bread-active{
+                    display: block;
+                }
+                .bread-active-detail{
+                    display: none;
+                }
             }
             //标题
             .news-title{
