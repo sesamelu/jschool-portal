@@ -29,8 +29,8 @@
                     <!-- <a
                         ><img src="@assets/img/images/img-logo.png" alt="图片"
                     /></a> -->
-                    <svg class="icon iconlogo_image school-log-right-svg" aria-hidden="true" >;
-                        <use xlink:href="#iconlogo_image"></use>
+                    <svg class="icon iconlogo2 school-log-right-svg" aria-hidden="true" >;
+                        <use xlink:href="#iconlogo2"></use>
                     </svg>
                 </div>
                 <div class="school-home">
@@ -223,8 +223,9 @@ export default {
 .pg-header-en {
     position: relative;
     .school-log-right-svg{
-        width: 71px;
-        height:71px;
+        width: 78px;
+        height:78px;
+        transform:scale(1.5)
     }
     .school-log-left-svg-wrapper{
         width:352px;

@@ -10,10 +10,11 @@
                                 <div class="phones">
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-phone.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont icondianhua"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             <!-- &nbsp;+86&nbsp;173-0968-8426 -->
@@ -22,9 +23,10 @@
                                     </div>
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-phone.png"
-                                            />
+                                            /> -->
+                                            <i class="iconfont icondianhua"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             <!-- &nbsp;+86&nbsp;558-483-1369 -->
@@ -35,10 +37,11 @@
                                 <div class="other-information">
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-email.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont iconyoujian"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             &nbsp;Admissions:&nbsp;&nbsp;admission@inqishun.com
@@ -46,10 +49,11 @@
                                     </div>
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-email.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont iconyoujian"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             &nbsp;Hiring:&nbsp;&nbsp;hr@inqishun.com
@@ -57,10 +61,11 @@
                                     </div>
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-email.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont iconyoujian"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             &nbsp;General
@@ -71,10 +76,11 @@
                                 <div class="address">
                                     <div class="address-item address-flex">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-add.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont icondizhi"></i>
                                         </div>
                                         <div class="address-item-word">
                                             <!-- Admission
@@ -86,10 +92,11 @@
                                     </div>
                                     <div class="address-item address-flex">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-add.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont icondizhi"></i>
                                         </div>
                                         <div class="address-item-word">
                                             <!-- &nbsp;Main
@@ -104,7 +111,7 @@
                         </div>
                         <div class="wChart">
                             <div class="contact-title">
-                                >>Official WeChat Accounts
+                                >>Concern
                             </div>
                             <div class="WChart-code-wrapper">
                                 <div class="WChart-code-item">
@@ -112,23 +119,23 @@
                                         src="@assets/img/icon/code_qishun.png"
                                         alt=""
                                     />
-                                    <div>J·SCHOOL</div>
+                                    <div>Official WeChat Accounts</div>
+                                </div>
+                                <div class="WChart-code-item">
+                                    <img
+                                        src="@assets/img/icon/douyin.jpg"
+                                        alt=""
+                                    />
+                                    <div>Tik Tok</div>
+                                </div>
+                                <div class="WChart-code-item">
+                                    <img
+                                        src="@assets/img/icon/kuaishou.jpg"
+                                        alt=""
+                                    />
+                                    <div>Kwai</div>
                                 </div>
                                 <!-- <div class="WChart-code-item">
-                                    <img
-                                        src="@assets/img/icon/code_recruit_students.png"
-                                        alt=""
-                                    />
-                                    <div>ADMISSIONS</div>
-                                </div>
-                                <div class="WChart-code-item">
-                                    <img
-                                        src="@assets/img/icon/code_hire.png"
-                                        alt=""
-                                    />
-                                    <div>HIRING</div>
-                                </div>
-                                <div class="WChart-code-item">
                                     <img
                                         src="@assets/img/icon/code_enquiry.png"
                                         alt=""
@@ -140,9 +147,13 @@
                     </div>
                     <div class="bottom-underline">
                         <span class="bottom-line"></span>
-                        <span
-                            ><img src="@assets/img/images/t-toWorld.png" alt=""
-                        /></span>
+                        <span style="font-size:100px;color:#fff;display:inline-block;width:100px;position:relative;">
+                            <!-- <img src="@assets/img/images/t-toWorld.png" alt=""/> -->
+                            <!-- <i class="iconfont iconcongzhelizouxiangshijie" style="color:#f00"></i> -->
+                            <svg class="icon iconcongzhelizouxiangshijie-EN " aria-hidden="true" style="width: 102px;height:90px;position:absolute;left:0;top:-52px;">;
+                                <use xlink:href="#iconcongzhelizouxiangshijie-EN"></use>
+                            </svg>
+                        </span>
                         <span class="bottom-line"></span>
                     </div>
                     <div class="bottom-police-word">

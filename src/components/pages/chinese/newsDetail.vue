@@ -13,6 +13,9 @@
             <div class="news-title">
                 {{title}}
             </div>
+            <div class="news-sub-title">
+                {{subTitle}}
+            </div>
             <div class="news-date">
                 <i class="iconfont iconrili" style="margin-right:6px;"></i>{{editDate}}
             </div>
@@ -34,6 +37,7 @@ export default {
     data(){
         return {
             title:'',
+            subTitle:'',
             type:'1',
             editDate:'',
             imgUrl:'',
@@ -56,6 +60,7 @@ export default {
                 .then((res) => {
                     if (0 === res.code) {
                         this.title = res.result.info.title;
+                        this.subTitle = res.result.info.subTitle;
                         this.type = res.result.info.type;
                         this.editDate = res.result.info.editDate;
                         this.imgUrl = res.result.info.imgUrl;
@@ -130,12 +135,19 @@ export default {
             font-weight: bold;
             text-align: center;
         }
+        .news-sub-title{
+            font-size: 18px;
+            color:#1C305C;
+            font-weight: bold;
+            text-align: center;
+            margin:8px 0 10px 0;
+        }
         //日期
         .news-date{
             font-size: 14px;
             color: #1C305C;
             text-align: center;
-            margin: 20px 0 20px 0;
+            margin: 10px 0 10px 0;
         }
         //图片或者视频
         .img-wrapper{
@@ -173,6 +185,9 @@ export default {
             .news-title{
                 font-size: 36px;
             }
+            .news-sub-title{
+                font-size: 18px;
+            }
             //日期
             .news-date{
                 font-size: 16px;
@@ -206,6 +221,9 @@ export default {
             .news-title{
                 font-size: 36px;
             }
+            .news-sub-title{
+                font-size: 24px;
+            }
             //日期
             .news-date{
                 font-size: 16px;
@@ -238,6 +256,9 @@ export default {
             //标题
             .news-title{
                 font-size: 36px;
+            }
+            .news-sub-title{
+                font-size: 24px;
             }
             //日期
             .news-date{

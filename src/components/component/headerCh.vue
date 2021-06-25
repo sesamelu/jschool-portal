@@ -28,8 +28,8 @@
                 </div>
                 <div class="school-log" style="cursor:pointer;" @click="goIndex">
                     <!-- <a> -->
-                        <svg class="icon iconlogo_image school-log-right-svg" aria-hidden="true" >;
-                            <use xlink:href="#iconlogo_image"></use>
+                        <svg class="icon iconlogo2 school-log-right-svg" aria-hidden="true" >;
+                            <use xlink:href="#iconlogo2"></use>
                         </svg>
                         <!-- <img src="@assets/img/images/img-logo.png" alt="图片"/> -->
                     <!-- </a> -->
@@ -128,7 +128,7 @@ export default {
             navList: [
                 {
                     label: "学校概况",
-                    name: ["page_organizer_ch", "page_profile_ch"], //用于高亮
+                    name: ["page_organizer_ch", "page_profile_ch","page_organizerWord_ch"], //用于高亮
                     routerName: "",
                     children: [
                         {
@@ -138,6 +138,10 @@ export default {
                         {
                             label: "界首齐舜学校",
                             routerName: "page_profile_ch",
+                        },
+                        {
+                            label: "创始人的话",
+                            routerName: "page_organizerWord_ch",
                         },
                     ],
                 },
@@ -151,21 +155,21 @@ export default {
                     ],
                     routerName: "page_schools_ch",
                 },
-                {
-                    label: "学校团队",
-                    name: ["page_organizerWord_ch"], //用于高亮
-                    routerName: "",
-                    children: [
-                        {
-                            label: "创始人的话",
-                            routerName: "page_organizerWord_ch",
-                        },
-                        // {
-                        //     label: "教师团队",
-                        //     routerName: "",
-                        // },
-                    ],
-                },
+                // {
+                //     label: "学校团队",
+                //     name: ["page_organizerWord_ch"], //用于高亮
+                //     routerName: "",
+                //     children: [
+                //         {
+                //             label: "创始人的话",
+                //             routerName: "page_organizerWord_ch",
+                //         },
+                //         // {
+                //         //     label: "教师团队",
+                //         //     routerName: "",
+                //         // },
+                //     ],
+                // },
                 {
                     label: "新闻与活动",
                     name: "page_news_ch",
@@ -283,6 +287,7 @@ export default {
     .school-log-right-svg{
         width: 78px;
         height:78px;
+        transform:scale(1.5)
     }
     .school-log-left-svg-wrapper{
         width:352px;
@@ -307,7 +312,7 @@ export default {
         text-align: center;
         font-size: 16px;
         color: #fff;
-        width: 13%;
+        width: 16%;
     }
     .nav-item.middle-width {
         width: 15%;
@@ -416,8 +421,8 @@ export default {
 // 隐藏pc端nav
 @media screen and (max-width: 1100px) {
     .pg-header-ch .school-log-right-svg{
-        width: 38px;
-        height:38px;
+        width: 40px;
+        height:40px;
     }
     .pg-header-ch .school-log-left-svg-wrapper{
         width:146px;

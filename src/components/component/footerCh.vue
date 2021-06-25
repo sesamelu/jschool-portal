@@ -10,10 +10,11 @@
                                 <div class="phones">
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-phone.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont icondianhua"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             <!-- &nbsp;+86&nbsp;173-0968-8426 -->
@@ -22,9 +23,10 @@
                                     </div>
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-phone.png"
-                                            />
+                                            /> -->
+                                             <i class="iconfont icondianhua"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             <!-- &nbsp;+86&nbsp;558-483-1369 -->
@@ -35,10 +37,11 @@
                                 <div class="other-information">
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-email.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                             <i class="iconfont iconyoujian"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             &nbsp;招生：admission@inqishun.com
@@ -46,10 +49,11 @@
                                     </div>
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-email.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont iconyoujian"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             &nbsp;招聘：hr@inqishun.com
@@ -57,10 +61,11 @@
                                     </div>
                                     <div class="phone-item">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-email.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont iconyoujian"></i>
                                         </div>
                                         <div class="phone-item-word">
                                             &nbsp;咨询：info@inqishun.com
@@ -70,10 +75,11 @@
                                 <div class="address">
                                     <div class="address-item address-flex">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-add.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont icondizhi"></i>
                                         </div>
                                         <div class="address-item-word">
                                             <!-- &nbsp;办公室：安徽省界首市光武大道689号6号楼409-410室 -->
@@ -82,10 +88,11 @@
                                     </div>
                                     <div class="address-item address-flex">
                                         <div>
-                                            <img
+                                            <!-- <img
                                                 src="@assets/img/icon/icon-add.png"
                                                 alt=""
-                                            />
+                                            /> -->
+                                            <i class="iconfont icondizhi"></i>
                                         </div>
                                         <div class="address-item-word">
                                             <!-- &nbsp;主校区：安徽省界首市颍南新区颍河路 -->
@@ -96,30 +103,30 @@
                             </div>
                         </div>
                         <div class="wChart">
-                            <div class="contact-title">>>微信公众号</div>
+                            <div class="contact-title">>>关注我们</div>
                             <div class="WChart-code-wrapper">
                                 <div class="WChart-code-item">
                                     <img
                                         src="@assets/img/icon/code_qishun.png"
                                         alt=""
                                     />
-                                    <div>齐舜学校·界首</div>
+                                    <div>微信公众号</div>
+                                </div>
+                                <div class="WChart-code-item">
+                                    <img
+                                        src="@assets/img/icon/douyin.jpg"
+                                        alt=""
+                                    />
+                                    <div>抖音</div>
+                                </div>
+                                <div class="WChart-code-item">
+                                    <img
+                                        src="@assets/img/icon/kuaishou.jpg"
+                                        alt=""
+                                    />
+                                    <div>快手</div>
                                 </div>
                                 <!-- <div class="WChart-code-item">
-                                    <img
-                                        src="@assets/img/icon/code_recruit_students.png"
-                                        alt=""
-                                    />
-                                    <div>招生</div>
-                                </div>
-                                <div class="WChart-code-item">
-                                    <img
-                                        src="@assets/img/icon/code_hire.png"
-                                        alt=""
-                                    />
-                                    <div>招聘</div>
-                                </div>
-                                <div class="WChart-code-item">
                                     <img
                                         src="@assets/img/icon/code_enquiry.png"
                                         alt=""
@@ -131,9 +138,16 @@
                     </div>
                     <div class="bottom-underline">
                         <span class="bottom-line"></span>
-                        <span
+                        <!-- <span
                             ><img src="@assets/img/images/t-toWorld.png" alt=""
-                        /></span>
+                        /></span> -->
+                        <span style="font-size:100px;color:#fff;display:inline-block;width:100px;position:relative;">
+                            <!-- <img src="@assets/img/images/t-toWorld.png" alt=""/> -->
+                            <!-- <i class="iconfont iconcongzhelizouxiangshijie" style="color:#f00"></i> -->
+                            <svg class="icon iconcongzhelizouxiangshijie " aria-hidden="true" style="width: 102px;height:90px;position:absolute;left:0;top:-48px;">;
+                                <use xlink:href="#iconcongzhelizouxiangshijie"></use>
+                            </svg>
+                        </span>
                         <span class="bottom-line"></span>
                     </div>
                     <div class="bottom-police-word">

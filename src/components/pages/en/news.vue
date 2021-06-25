@@ -1,51 +1,44 @@
 <template>
     <div class="pg-news-en">
         <div class="schools-content">
-            <div class="index-first index-first-new " v-if="topList && topList.length>0">
-                <div class="index-picture-part-wrapper">
-                    <div
-                        class="ih-item square effect6 from_top_and_bottom square-picture"
-                    >
-                        <!-- <a href="#"> -->
-                            <div class="top-img">
-                                <img
-                                    :src="topList[0].imgUrl"
-                                    alt="img"
-                                    style="object-fit:cover;"
-                                />
-                                <span class="play-icon" v-if="topList[0].type === '2'" @click="goDetail(topList[0].id)">
-                                    <!-- <img
-                                        src="@assets/img/icon/play-icon.png"
-                                        style="width: 100%"
-                                    /> -->
-                                    <svg class="icon iconbofang " aria-hidden="true" style="width: 100%;height:100%;">;
-                                        <use xlink:href="#iconbofang"></use>
-                                    </svg>
-                                </span>
+            <div class="swiper-container" v-if="swiperList && swiperList.length>0">
+                <div class="left-mask">
+                </div>
+                <div class="right-mask">
+                </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide index-first index-first-new "
+                    v-for="item in swiperList"
+                    :key="item.id">
+                        <div class="index-picture-part-wrapper">
+                            <div
+                                class="ih-item square effect6 from_top_and_bottom square-picture"
+                            >
+                                <!-- <a href="#"> -->
+                                    <div class="swiper-img">
+                                        <img
+                                            :src="item.imgLink"
+                                            alt="img"
+                                            style="width:100%;object-fit:cover;"
+                                        />
+                                    </div>
+                                <!-- </a> -->
                             </div>
-                            <!-- <div class="img" v-if="topList[0].type === '1'">
-                                <img
-                                    :src="topList[0].imgUrl"
-                                    alt="img"
-                                />
-                            </div> -->
-                            <!-- <div style="text-align:center;" v-else>
-                                <video width="94%" height="94%" controls="controls" autoplay="autoplay">
-                                    <source :src="topList[0].videoUrl" type="video/mp4" />
-                                </video>
-                            </div> -->
-                        <!-- </a> -->
+                        </div>
+                        <div class="index-word-part index-word-location index-new">
+                            <span class="index-words-content"
+                                >{{item.title}}</span
+                            >
+                        </div>
                     </div>
                 </div>
-                <div class="index-word-part index-word-location index-new">
-                    <span class="index-words-content"
-                        >{{topList[0].title}}</span
-                    >
-                    <span class="learn-more" @click="goDetail(topList[0].id)">
-                        了解更多
-                    </span>
-                </div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+                <div class="swiper-button-next swiper-button-white"></div>
             </div>
+            <div class="swiper-pagination-wrapper" v-if="swiperList && swiperList.length>0">
+                <div class="swiper-pagination"></div>
+            </div>
+            
         </div>
         <div class="pg-news-wrapper">            
             <!-- 列表 -->
@@ -96,10 +89,41 @@
     </div>
 </template>
 <script>
+import Swiper from 'swiper'
 export default {
     data() {
         return {
-            topList:[
+            swiperList:[
+                // {
+                //     id:1,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:2,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:3,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'活动照片',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:4,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
+                // {
+                //     id:5,
+                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
+                //     title:'随便写的',
+                //     editDate:'2021-01-11 12:00:21',
+                // },
             ],
             newsList:[],
             isEnd:true,
@@ -108,30 +132,51 @@ export default {
         };
     },
     mounted() {
-        this.getTop()
         this.getList()
+        this.getSwiperList()
     },
     methods: {
-        getTop(){
+        // 初始化轮播图
+        initSwiper(){
+            new Swiper ('.swiper-container', {
+                loop: true,
+                initialSlide :0,
+                spaceBetween: 20,
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                paginationClickable: true,
+                // 如果需要分页器
+                pagination: '.swiper-pagination',
+                // paginationBulletRender: function (swiper, index, className) {
+                //     return '<span class="'+className+'" style="width:60px;height:4px;border-radius:0;display:inline-block;margin-right:16px;"></span>';
+                // },
+                // 如果需要前进后退按钮
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                // slidesOffsetBefore:100,
+                // slidesOffsetAfter:100,
+                // 如果需要滚动条
+                // scrollbar: '.swiper-scrollbar',
+                //如果需要自动切换海报
+                autoplay: 3000,
+        })
+        },
+        //获取轮播图列表数据
+        getSwiperList(){
             let params = {
                 type: 'en',
-                isTop: 1, //1-是，0-否，不传-返回所有
-                pageSize:1,
-                pageNumber: 1
             };
-            this.$http
-            .get("/qishun/deployServer/newsList", params, this)
-            .then((res) => {
-                if (0 === res.code) {
-                    this.topList = res.result.list;
-                } else {
-                    // this.$message.error(res.resultMessage);
-                }
-            })
-            .catch((error) => {
-                // this.$message.error("获取列表数据失败");
-            });
-
+            this.$http.get("/qishun/deployServer/homePageList", params, this)
+                .then((res) => {
+                    if (0 === res.code) {
+                        this.swiperList = res.result.list;
+                    } else {
+                        // this.$message.error(res.resultMessage);
+                    }
+                })
+                .catch((error) => {
+                    // this.$message.error("获取轮播图列表失败");
+                });
         },
         getList(){
             let params = {
@@ -172,12 +217,42 @@ export default {
             })
         }
     },
+    updated(){
+        this.initSwiper()
+
+    },
 };
 </script>
 <style scoped lang="scss">
 /* 超小屏幕（手机，小于 768px） */
 /* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
 .pg-news-en {
+    // 轮播图
+    .swiper-container{
+        // width: 90%;
+        .left-mask{
+            width: 6%;
+            height:100%;
+            background: #fff;
+            // background: linear-gradient(to right,rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)); 
+            opacity: 0.4;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 100;
+        }
+        .right-mask{
+            width: 6%;
+            height:100%;
+            background: #fff;
+            opacity: 0.4;
+            position: absolute;
+            top:0;
+            right:0;
+            z-index: 100;
+        }
+        
+    }
     .top-img{
         height: 200px;
         position: relative;
@@ -367,6 +442,125 @@ export default {
         }
     }
 
+}
+
+</style>
+<style lang="scss">
+ .pg-news-en {
+     .swiper-img{
+         height:600px;
+     }
+     .swiper-slide{
+        width: 86%;
+    }
+    .swiper-pagination{
+        position: relative;
+        margin: 0 auto;
+        .swiper-pagination-bullet{
+            background: #E1E4EB;
+            opacity: 1;
+            width: 60px;
+            height:4px;
+            border-radius: 0;
+            display:inline-block;
+            margin-right:16px;
+        }
+        .swiper-pagination-bullet-active{
+            background: #A8B1C6;
+        }
+    }
+    .swiper-button-prev{
+        left: 10%;
+    }
+    .swiper-button-next{
+        right: 10%
+    }
+    
+   
+    
+}
+@media  screen and  (max-width:1200px){
+    .pg-news-en {
+        .swiper-img{
+            height:300px;
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 60px;
+                height:4px;
+            }
+        }
+        .swiper-slide{
+            width: 86%;
+        }
+        
+    }
+}
+@media  screen and  (max-width:800px){
+    .pg-news-en {
+        .swiper-img{
+            height:240px;
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 48px;
+                height:3px;
+            }
+        }
+        .swiper-button-prev,.swiper-button-next{
+            display: none;
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+        .left-mask,.right-mask{
+            display: none;
+        }
+    }    
+}
+@media  screen and  (max-width:550px){
+    .pg-news-en {
+        .swiper-img{
+            height:200px;
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 36px;
+                height:3px;
+            }
+        }
+        .swiper-button-prev,.swiper-button-next{
+            display: none;
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+        .left-mask,.right-mask{
+            display: none;
+        }
+    }          
+}
+@media  screen and  (max-width:420px){
+    .pg-news-en {
+        .swiper-img{
+            height:200px;
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 36px;
+                height:3px;
+            }
+        }
+        .swiper-button-prev,.swiper-button-next{
+            display: none;
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+        .left-mask,.right-mask{
+            display: none;
+        }
+    }
 }
 
 </style>

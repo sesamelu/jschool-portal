@@ -2,43 +2,42 @@
     <div class="pg-index-ch">
         <article class="content">
             <div class="schools-content">
-                <div class="swiper-container" v-if="swiperList && swiperList.length>0">
-                    <div class="left-mask">
-                    </div>
-                    <div class="right-mask">
-                    </div>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide index-first index-first-new " 
-                        v-for="item in swiperList"
-                        :key="item.id"
+                <div class="index-first index-first-new " v-if="topList && topList.length>0">
+                    <div class="index-picture-part-wrapper">
+                        <div
+                            class="ih-item square effect6 from_top_and_bottom square-picture"
                         >
-                            <div class="index-picture-part-wrapper">
-                                <div
-                                    class="ih-item square effect6 from_top_and_bottom square-picture"
-                                >
-                                    <!-- <a href="#"> -->
-                                        <div class="swiper-img">
-                                            <img
-                                                :src="item.imgLink"
-                                                alt="img"
-                                                style="width:100%;object-fit:cover;"
-                                            />
-                                        </div>
-                                    <!-- </a> -->
+                            <!-- <a href="#"> -->
+                                <div class="top-img">
+                                    <video width="100%" height="100%" controls="controls" >
+                                        <source :src="topList[0].vedioLink" type="video/mp4" />
+                                    </video>
+                                    <div class="vedio-title">
+                                        {{topList[0].title}}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="index-word-part index-word-location index-new">
-                                <span class="index-words-content"
-                                    >{{item.title}}</span
-                                >
-                            </div>
+                                <!-- <div class="img" v-if="topList[0].type === '1'">
+                                    <img
+                                        :src="topList[0].imgUrl"
+                                        alt="img"
+                                    />
+                                </div> -->
+                                <!-- <div style="text-align:center;" v-else>
+                                    <video width="94%" height="94%" controls="controls" autoplay="autoplay">
+                                        <source :src="topList[0].videoUrl" type="video/mp4" />
+                                    </video>
+                                </div> -->
+                            <!-- </a> -->
                         </div>
                     </div>
-                    <div class="swiper-button-prev swiper-button-white"></div>
-                    <div class="swiper-button-next swiper-button-white"></div>
-                </div>
-                <div class="swiper-pagination-wrapper" v-if="swiperList && swiperList.length>0">
-                    <div class="swiper-pagination"></div>
+                    <!-- <div class="index-word-part index-word-location index-new">
+                        <span class="index-words-content"
+                            >{{topList[0].title}}</span
+                        >
+                        <span class="learn-more" @click="goDetail(topList[0].id)">
+                            了解更多
+                        </span>
+                    </div> -->
                 </div>
                 <div class="schools">
                     <div class="school-introduce school-introduce-new">
@@ -394,14 +393,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="campus">
-                    <div class="index-campus index-campus-word">
+                <div class="campus" style="height:62px;">
+                    <!-- <div class="index-campus index-campus-word">
                         <div>
                             设施齐全、装修一流的新校园，确保良好的学习环境
                         </div>
                         <div></div>
                         （室内中央空调、400米跑道的操场、完善的体育文艺设施）
-                    </div>
+                    </div> -->
                 </div>
                 <div class="campus-picture campus">
                     <div
@@ -412,6 +411,10 @@
                                 <img src="@assets/img/images/index5.png" alt="img" />
                             </div>
                         </a>
+                        <div class="index-word-part left-word">
+                            <div>设施齐全、装修一流的新校园，确保良好的学习环境</div>
+                            <div>（室内中央空调、400米跑道的操场、完善的体育文艺设施）</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -458,38 +461,7 @@ export default {
     created() {},
     data() {
         return {
-            swiperList:[
-                // {
-                //     id:1,
-                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                //     title:'从幼儿园到高中，从入学到大学；家长无忧，孩子开心，测试很擅长很长二环内很长超级长的文字适出角度看是否就收到回复',
-                //     editDate:'2021-01-11 12:00:21',
-                // },
-                // {
-                //     id:2,
-                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                //     title:'随便写的',
-                //     editDate:'2021-01-11 12:00:21',
-                // },
-                // {
-                //     id:3,
-                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                //     title:'活动照片',
-                //     editDate:'2021-01-11 12:00:21',
-                // },
-                // {
-                //     id:4,
-                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                //     title:'随便写的',
-                //     editDate:'2021-01-11 12:00:21',
-                // },
-                // {
-                //     id:5,
-                //     imgLink:'http://www.jschool.org.cn/img/images/index1.png',
-                //     title:'随便写的',
-                //     editDate:'2021-01-11 12:00:21',
-                // },
-            ],
+            topList:[],
             //学部介绍
             departmentList:[
                 // {
@@ -562,57 +534,27 @@ export default {
         };
     },
     mounted() {
-        this.getSwiperList()
+        this.getTopList()
         this.getDepartmentList()
         this.getList()
-        // this.initSwiper()
-       
-    
     },
     methods: {
-        // 初始化轮播图
-        initSwiper(){
-            new Swiper ('.swiper-container', {
-                loop: true,
-                // initialSlide :0,
-                spaceBetween: 20,
-                slidesPerView: 'auto',
-                centeredSlides: true,
-                paginationClickable: true,
-                // 如果需要分页器
-                pagination: '.swiper-pagination',
-                // paginationBulletRender: function (swiper, index, className) {
-                //     return '<span class="'+className+'" style="width:60px;height:4px;border-radius:0;display:inline-block;margin-right:16px;"></span>';
-                // },
-                // 如果需要前进后退按钮
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                // slidesOffsetBefore:100,
-                // slidesOffsetAfter:100,
-                // 如果需要滚动条
-                // scrollbar: '.swiper-scrollbar',
-                //如果需要自动切换海报
-                autoplay: 3000,
-                
-            })
-        },
-        //获取轮播图列表数据
-        getSwiperList(){
+        getTopList(){
             let params = {
-                type: 'ch',
+                type: 'ch'
             };
-            this.$http.get("/qishun/deployServer/homePageList", params, this)
-                .then((res) => {
-                    if (0 === res.code) {
-                        this.swiperList = res.result.list;
-                        
-                    } else {
-                        // this.$message.error(res.resultMessage);
-                    }
-                })
-                .catch((error) => {
-                    // this.$message.error("获取轮播图列表失败");
-                });
+            this.$http
+            .get("/qishun/deployServer/homePageVideoList", params, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.topList = res.result.list;
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
         },
         //获取学部介绍列表数据
         getDepartmentList(){
@@ -680,16 +622,13 @@ export default {
         }
         
     },
-    updated(){
-        this.initSwiper()
-
-    },
 
     components: {},
 };
 </script>
 <style scoped lang="scss">
 .pg-index-ch{
+    
     .swiper-container{
         // width: 90%;
         .left-mask{
@@ -721,6 +660,15 @@ export default {
 </style>
 <style lang="scss">
  .pg-index-ch {
+     .top-img{
+        .vedio-title{
+            font-size: 24px;
+            color: #1C305C;
+            font-weight: bold;
+            text-align: left;
+            line-height: 48px;
+        }
+    }
      .swiper-img{
          height:600px;
      }
@@ -755,6 +703,12 @@ export default {
 }
 @media  screen and  (max-width:1200px){
     .pg-index-ch {
+        .top-img{
+            .vedio-title{
+                font-size: 18px;
+                line-height: 32px;
+            }
+        }
         .swiper-img{
             height:300px;
         }
@@ -772,6 +726,12 @@ export default {
 }
 @media  screen and  (max-width:800px){
     .pg-index-ch {
+        .top-img{
+            .vedio-title{
+                font-size: 14px;
+                line-height: 30px;
+            }
+        }
         .swiper-img{
             height:240px;
         }
@@ -794,6 +754,12 @@ export default {
 }
 @media  screen and  (max-width:550px){
     .pg-index-ch {
+        .top-img{
+            .vedio-title{
+                font-size: 14px;
+                line-height: 28px;
+            }
+        }
         .swiper-img{
             height:200px;
         }
@@ -816,6 +782,12 @@ export default {
 }
 @media  screen and  (max-width:420px){
     .pg-index-ch {
+        .top-img{
+            .vedio-title{
+                font-size: 14px;
+                line-height: 28px;
+            }
+        }
         .swiper-img{
             height:200px;
         }
