@@ -295,7 +295,7 @@ width:100%;
 }
 
 .left-word, .right-word {
-    font-size: 22px;
+    font-size: 18px;
     padding: 10px 10px;
 }
 .bridge{
@@ -303,7 +303,7 @@ width:100%;
 }
 @media  screen and (max-width: 900px) {
     .left-word, .right-word {
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 .other-school {
@@ -350,10 +350,10 @@ width:100%;
     width:70%;
 }
 .title-word-new{
- font-size:40px;
+ font-size:32px;
 }
 .col-bar{
-    height: 40px;
+    height: 32px;
 }
 .graduate-top{
     display: flex;
@@ -363,6 +363,12 @@ width:100%;
 }
 .kindergarten-picture-new{
     width:100%;
+}
+.info-title{
+    margin-top:40px;
+}
+.en.info-title{
+    margin-top:40px;
 }
 .info-title-new{
   margin-top:0;

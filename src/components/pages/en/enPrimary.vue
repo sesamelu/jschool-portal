@@ -43,7 +43,7 @@
             <div class="info-title en">
                 <span
                     class="col-bar"
-                    style="vertical-align: -2px; height: 57px"
+                    style="vertical-align: -2px; height: 44px"
                 ></span
                 ><span class="title-word title-word-new"
                     >PRIMARY AND MIDDLE SCHOOL</span
