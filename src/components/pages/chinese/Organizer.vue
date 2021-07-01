@@ -4,7 +4,7 @@
             <div class="graduate-top">
                 <div class="kindergarten-link-title">
                     <div class="info-title info-title-new word-flex">
-                        <div class="col-bar col-bar-creater"></div>
+                        <div class="col-bar"></div>
                         <div
                             style="
                                 display: inline-block;
@@ -12,11 +12,11 @@
                             "
                         >
                             <div class="title-word title-word-new">举办者</div>
-                            <div
+                            <!-- <div
                                 class="title-word profile-title2 title-word-new"
                             >
                                 上海齐舜教育集团
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

@@ -141,11 +141,11 @@ export default {
                     name: "page_news_en",
                     routerName: "page_news_en",
                 },
-                {
-                    label: "OUR NETWORK",
-                    name: "page_resource_en",
-                    routerName: "page_resource_en",
-                },
+                // {
+                //     label: "OUR NETWORK",
+                //     name: "page_resource_en",
+                //     routerName: "page_resource_en",
+                // },
                 {
                     label: "CAREERS",
                     name: "page_jobworking_en",
@@ -154,8 +154,40 @@ export default {
             ],
         };
     },
-    mounted() {},
+    mounted() {
+        this.initNavList()
+    },
     methods: {
+        //学校资源、十年颖才计划可配置
+        initNavList(){
+            this.$http
+            .get("/qishun/deployServer/qrySwitch", {}, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.navTrans(res.result.list);
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+
+        },
+        navTrans(list){
+            list.forEach((item,index)=>{
+                if(item.module === 'enSchoolResource' && item.isShow){
+                    this.navEnList.push(
+                        {
+                            label: "OUR NETWORK",
+                            name: "page_resource_en",
+                            routerName: "page_resource_en",
+                        },
+                    )
+                }
+            })
+
+        },
         //点击logo跳转到首页
         goIndex(){
             this.$router.push({

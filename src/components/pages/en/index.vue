@@ -413,14 +413,15 @@
                         </div>
                     </div>
                 </div>
-
+                <div style="height:80px;" v-if="!resourceFlag"></div>
                 <div
                     class="school-introduce school-introduce-new"
                     style="text-align: center"
+                    v-if="resourceFlag"
                 >
                     Educational Resources and Partners
                 </div>
-                <div class="other-school en-new">
+                <div class="other-school en-new" v-if="resourceFlag">
                     <div class="school-item"
                      v-for="item in resourceList"
                     :key="item.id"
@@ -532,12 +533,13 @@ export default {
                 //     editDate: "2021-01-11 12:00:21",
                 // },
             ], 
+            resourceFlag: false,
         };
     },
     mounted() {
         this.getTopList()
         this.getDepartmentList()
-        this.getList()
+        this.getResourceFlag()
     },
     methods: {
         getTopList(){
@@ -556,6 +558,31 @@ export default {
             .catch((error) => {
                 // this.$message.error("获取列表数据失败");
             });
+        },
+        //教育资源是否显示
+        getResourceFlag(){
+            this.$http
+            .get("/qishun/deployServer/qrySwitch", {}, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.navTrans(res.result.list);
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
+        navTrans(list){
+            list.forEach((item,index)=>{
+                if(item.module === 'enSchoolResource' && item.isShow){
+                    this.resourceFlag = true;
+                    this.getList()
+                }else{
+                    this.resourceFlag = false;
+                }
+            })
         },
         //获取学部介绍列表数据
         getDepartmentList(){

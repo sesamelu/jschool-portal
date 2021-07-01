@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="info-title">
+            <div class="info-title en">
                 <span class="col-bar"></span
                 ><span class="title-word title-word-new">HIGH SCHOOL</span>
             </div>

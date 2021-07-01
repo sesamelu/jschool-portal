@@ -418,14 +418,15 @@
                     </div>
                 </div>
             </div>
-
+            <div style="height:80px;" v-if="!resourceFlag"></div>
             <div
                 class="school-introduce school-introduce-new"
                 style="text-align: center"
+                 v-if="resourceFlag"
             >
                 教育资源及合作伙伴
             </div>
-            <div class="other-school">
+            <div class="other-school"  v-if="resourceFlag">
                 <div class="school-item" 
                 v-for="item in resourceList"
                 :key="item.id">
@@ -531,12 +532,14 @@ export default {
                 //     editDate: "2021-01-11 12:00:21",
                 // },
             ], 
+            resourceFlag:false,
         };
     },
     mounted() {
         this.getTopList()
         this.getDepartmentList()
-        this.getList()
+        this.getResourceFlag()
+        
     },
     methods: {
         getTopList(){
@@ -573,6 +576,31 @@ export default {
             .catch((error) => {
                 // this.$message.error("获取列表数据失败");
             });
+        },
+        //教育资源是否显示
+        getResourceFlag(){
+            this.$http
+            .get("/qishun/deployServer/qrySwitch", {}, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.navTrans(res.result.list);
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+        },
+        navTrans(list){
+            list.forEach((item,index)=>{
+                if(item.module === 'chSchoolResource' && item.isShow){
+                    this.resourceFlag = true;
+                    this.getList()
+                }else{
+                    this.resourceFlag = false;
+                }
+            })
         },
         //教育资源列表
         getList(){

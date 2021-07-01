@@ -296,7 +296,7 @@ body {
 
 
 .left-word ,.right-word{
-    font-size:2.4rem;
+    font-size:1.8rem;
     color:#ffffff;
     position:absolute;
     bottom:0;
@@ -721,13 +721,13 @@ body {
 
 .info-title {
     color: #b6212D;
-    font-size: 72px;
+    font-size: 44px;
     font-weight: bold;
-    margin-top: 126px;
+    margin-top: 316px;
 }
 
 .en.info-title {
-    margin-top: 126px;
+    margin-top: 316px;
 }
 
 .link-item {
@@ -1297,9 +1297,16 @@ a.download:hover, a.download:focus {
     justify-content: center;
 }
 @media  screen and (max-width: 1400px) { 
-.title-word-new{
-    font-size:44px;
-}
+    .title-word-new{
+        font-size:44px;
+    }
+    .info-title {
+        margin-top: 146px;
+    }
+    .en.info-title {
+        margin-top: 146px;
+    }
+
 }
 /* 学校部分开始缩放 */
 @media  screen and (max-width: 1340px) { 

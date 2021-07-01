@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="info-title">
+        <div class="info-title en">
                 <span class="col-bar"></span><span class="title-word title-word-new">KINDERGARTEN</span>
             </div>
         <div class="kindergarten-info-title high-new">

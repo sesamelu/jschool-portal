@@ -175,11 +175,11 @@ export default {
                     name: "page_news_ch",
                     routerName: "page_news_ch",
                 },
-                {
-                    label: "学校资源",
-                    name: "page_resource_ch",
-                    routerName: "page_resource_ch",
-                },
+                // {
+                //     label: "学校资源",
+                //     name: "page_resource_ch",
+                //     routerName: "page_resource_ch",
+                // },
                 {
                     label: "招聘和招生",
                     name: [
@@ -203,16 +203,57 @@ export default {
                         },
                     ],
                 },
-                {
-                    label: "十年双百颖才计划",
-                    name: "page_tenYears_ch",
-                    routerName: "page_tenYears_ch",
-                },
+                // {
+                //     label: "十年双百颖才计划",
+                //     name: "page_tenYears_ch",
+                //     routerName: "page_tenYears_ch",
+                // },
             ],
         };
     },
-    mounted() {},
+    mounted() {
+        this.initNavList()
+    },
     methods: {
+        //学校资源、十年颖才计划可配置
+        initNavList(){
+            this.$http
+            .get("/qishun/deployServer/qrySwitch", {}, this)
+            .then((res) => {
+                if (0 === res.code) {
+                    this.navTrans(res.result.list);
+                } else {
+                    // this.$message.error(res.resultMessage);
+                }
+            })
+            .catch((error) => {
+                // this.$message.error("获取列表数据失败");
+            });
+
+        },
+        navTrans(list){
+            list.forEach((item,index)=>{
+                if(item.module === 'chSchoolResource' && item.isShow){
+                    this.navList.push(
+                        {
+                            label: "学校资源",
+                            name: "page_resource_ch",
+                            routerName: "page_resource_ch",
+                        },
+                    )
+                }
+                if(item.module === 'talentPlan' && item.isShow){
+                    this.navList.push(
+                        {
+                            label: "十年双百颖才计划",
+                            name: "page_tenYears_ch",
+                            routerName: "page_tenYears_ch",
+                        },
+                    )
+                }
+            })
+
+        },
         //点击logo跳转到首页
         goIndex(){
             this.$router.push({
@@ -305,6 +346,8 @@ export default {
         background: #1c305c;
         padding-left: 3%;
         padding-right: 3%;
+        display: flex;
+        justify-content: space-between;
     }
     .nav-item {
         display: inline-block;
